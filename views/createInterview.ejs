@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Limitless - Responsive Web Application Kit by Eugene Kopyov</title>
+
+    <!-- Global stylesheets -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900" rel="stylesheet"
+        type="text/css">
+    <link href="global_assets/css/icons/icomoon/styles.min.css" rel="stylesheet" type="text/css">
+    <link href="layout_1/LTR/default/full/assets/css/all.min.css" rel="stylesheet" type="text/css">
+    <!-- /global stylesheets -->
+
+    <!-- Core JS files -->
+    <script src="global_assets/js/main/jquery.min.js"></script>
+    <script src="global_assets/js/main/bootstrap.bundle.min.js"></script>
+    <!-- /core JS files -->
+
+    <!-- Theme JS files -->
+    <script src="global_assets/js/plugins/visualization/d3/d3.min.js"></script>
+    <script src="global_assets/js/plugins/visualization/d3/d3_tooltip.js"></script>
+    <script src="global_assets/js/plugins/ui/moment/moment.min.js"></script>
+    <script src="global_assets/js/plugins/pickers/daterangepicker.js"></script>
+    <script src="global_assets/js/plugins/uploaders/fileinput/plugins/sortable.min.js"></script>
+    <script src="global_assets/js/plugins/uploaders/fileinput/fileinput.min.js"></script>
+    <script src="global_assets/js/demo_pages/uploader_bootstrap.js"></script>
+    <script src="layout_1/LTR/default/full/assets/js/app.js"></script>
+    <script src="global_assets/js/demo_pages/dashboard.js"></script>
+    <script src="global_assets/js/demo_charts/pages/dashboard/light/streamgraph.js"></script>
+    <script src="global_assets/js/demo_charts/pages/dashboard/light/sparklines.js"></script>
+    <script src="global_assets/js/demo_charts/pages/dashboard/light/lines.js"></script>
+    <script src="global_assets/js/demo_charts/pages/dashboard/light/areas.js"></script>
+    <script src="global_assets/js/demo_charts/pages/dashboard/light/donuts.js"></script>
+    <script src="global_assets/js/demo_charts/pages/dashboard/light/bars.js"></script>
+    <script src="global_assets/js/demo_charts/pages/dashboard/light/progress.js"></script>
+    <script src="global_assets/js/demo_charts/pages/dashboard/light/heatmaps.js"></script>
+    <script src="global_assets/js/demo_charts/pages/dashboard/light/pies.js"></script>
+    <script src="global_assets/js/demo_charts/pages/dashboard/light/bullets.js"></script>
+      <script src="global_assets/js/plugins/forms/selects/select2.min.js"></script>
+    <script src="global_assets/js/demo_pages/form_select2.js"></script>
+    <!-- /theme JS files -->
+
+</head>
+
+<body>
+
+    <!-- Main navbar -->
+    <div class="navbar navbar-expand-lg navbar-dark navbar-static">
+        <div class="d-flex flex-1 d-lg-none">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-mobile">
+                <i class="icon-paragraph-justify3"></i>
+            </button>
+            <button class="navbar-toggler sidebar-mobile-main-toggle" type="button">
+                <i class="icon-transmission"></i>
+            </button>
+        </div>
+
+        <div class="navbar-brand text-center text-lg-left">
+            <a href="index.html" class="d-inline-block">
+                <img src="global_assets/images/logo_light.png" class="d-none d-sm-block" alt="">
+                <img src="global_assets/images/logo_icon_light.png" class="d-sm-none" alt="">
+            </a>
+        </div>
+
+        <div class="collapse navbar-collapse order-2 order-lg-1" id="navbar-mobile">
+            <ul class="navbar-nav">
+                <li class="nav-item dropdown">
+                    <a href="#" class="navbar-nav-link" data-toggle="dropdown">
+                        <i class="icon-git-compare"></i>
+                        <span class="d-lg-none ml-3">Git updates</span>
+                        <span class="badge badge-warning badge-pill ml-auto ml-lg-0">9</span>
+                    </a>
+
+                    <div class="dropdown-menu dropdown-content wmin-lg-350">
+                        <div class="dropdown-content-header">
+                            <span class="font-weight-semibold">Git updates</span>
+                            <a href="#" class="text-body"><i class="icon-sync"></i></a>
+                        </div>
+
+                        <div class="dropdown-content-body dropdown-scrollable">
+                            <ul class="media-list">
+                                <li class="media">
+                                    <div class="mr-3">
+                                        <a href="#"
+                                            class="btn bg-transparent border-primary text-primary rounded-pill border-2 btn-icon"><i
+                                                class="icon-git-pull-request"></i></a>
+                                    </div>
+
+                                    <div class="media-body">
+                                        Drop the IE <a href="#">specific hacks</a> for temporal inputs
+                                        <div class="text-muted font-size-sm">4 minutes ago</div>
+                                    </div>
+                                </li>
+
+                                <li class="media">
+                                    <div class="mr-3">
+                                        <a href="#"
+                                            class="btn bg-transparent border-warning text-warning rounded-pill border-2 btn-icon"><i
+                                                class="icon-git-commit"></i></a>
+                                    </div>
+
+                                    <div class="media-body">
+                                        Add full font overrides for popovers and tooltips
+                                        <div class="text-muted font-size-sm">36 minutes ago</div>
+                                    </div>
+                                </li>
+
+                                <li class="media">
+                                    <div class="mr-3">
+                                        <a href="#"
+                                            class="btn bg-transparent border-info text-info rounded-pill border-2 btn-icon"><i
+                                                class="icon-git-branch"></i></a>
+                                    </div>
+
+                                    <div class="media-body">
+                                        <a href="#">Chris Arney</a> created a new <span
+                                            class="font-weight-semibold">Design</span> branch
+                                        <div class="text-muted font-size-sm">2 hours ago</div>
+                                    </div>
+                                </li>
+
+                                <li class="media">
+                                    <div class="mr-3">
+                                        <a href="#"
+                                            class="btn bg-transparent border-success text-success rounded-pill border-2 btn-icon"><i
+                                                class="icon-git-merge"></i></a>
+                                    </div>
+
+                                    <div class="media-body">
+                                        <a href="#">Eugene Kopyov</a> merged <span
+                                            class="font-weight-semibold">Master</span> and <span
+                                            class="font-weight-semibold">Dev</span> branches
+                                        <div class="text-muted font-size-sm">Dec 18, 18:36</div>
+                                    </div>
+                                </li>
+
+                                <li class="media">
+                                    <div class="mr-3">
+                                        <a href="#"
+                                            class="btn bg-transparent border-primary text-primary rounded-pill border-2 btn-icon"><i
+                                                class="icon-git-pull-request"></i></a>
+                                    </div>
+
+                                    <div class="media-body">
+                                        Have Carousel ignore keyboard events
+                                        <div class="text-muted font-size-sm">Dec 12, 05:46</div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="dropdown-content-footer bg-light">
+                            <a href="#" class="text-body mr-auto">All updates</a>
+                            <div>
+                                <a href="#" class="text-body" data-popup="tooltip" title="Mark all as read"><i
+                                        class="icon-radio-unchecked"></i></a>
+                                <a href="#" class="text-body ml-2" data-popup="tooltip" title="Bug tracker"><i
+                                        class="icon-bug2"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+
+            <span class="badge badge-success my-3 my-lg-0 ml-lg-3">Online</span>
+
+            <ul class="navbar-nav ml-lg-auto">
+                <li class="nav-item dropdown">
+                    <a href="#" class="navbar-nav-link" data-toggle="dropdown">
+                        <i class="icon-people"></i>
+                        <span class="d-lg-none ml-3">Messages</span>
+                    </a>
+
+                    <div class="dropdown-menu dropdown-menu-right dropdown-content wmin-lg-300">
+                        <div class="dropdown-content-header">
+                            <span class="font-weight-semibold">Users online</span>
+                            <a href="#" class="text-body"><i class="icon-search4 font-size-base"></i></a>
+                        </div>
+
+                        <div class="dropdown-content-body dropdown-scrollable">
+                            <ul class="media-list">
+                                <li class="media">
+                                    <div class="mr-3">
+                                        <img src="global_assets/images/placeholders/placeholder.jpg" width="36"
+                                            height="36" class="rounded-circle" alt="">
+                                    </div>
+                                    <div class="media-body">
+                                        <a href="#" class="media-title font-weight-semibold">Jordana Ansley</a>
+                                        <span class="d-block text-muted font-size-sm">Lead web developer</span>
+                                    </div>
+                                    <div class="ml-3 align-self-center"><span
+                                            class="badge badge-mark border-success"></span></div>
+                                </li>
+
+                                <li class="media">
+                                    <div class="mr-3">
+                                        <img src="global_assets/images/placeholders/placeholder.jpg" width="36"
+                                            height="36" class="rounded-circle" alt="">
+                                    </div>
+                                    <div class="media-body">
+                                        <a href="#" class="media-title font-weight-semibold">Will Brason</a>
+                                        <span class="d-block text-muted font-size-sm">Marketing manager</span>
+                                    </div>
+                                    <div class="ml-3 align-self-center"><span
+                                            class="badge badge-mark border-danger"></span></div>
+                                </li>
+
+                                <li class="media">
+                                    <div class="mr-3">
+                                        <img src="global_assets/images/placeholders/placeholder.jpg" width="36"
+                                            height="36" class="rounded-circle" alt="">
+                                    </div>
+                                    <div class="media-body">
+                                        <a href="#" class="media-title font-weight-semibold">Hanna Walden</a>
+                                        <span class="d-block text-muted font-size-sm">Project manager</span>
+                                    </div>
+                                    <div class="ml-3 align-self-center"><span
+                                            class="badge badge-mark border-success"></span></div>
+                                </li>
+
+                                <li class="media">
+                                    <div class="mr-3">
+                                        <img src="global_assets/images/placeholders/placeholder.jpg" width="36"
+                                            height="36" class="rounded-circle" alt="">
+                                    </div>
+                                    <div class="media-body">
+                                        <a href="#" class="media-title font-weight-semibold">Dori Laperriere</a>
+                                        <span class="d-block text-muted font-size-sm">Business developer</span>
+                                    </div>
+                                    <div class="ml-3 align-self-center"><span
+                                            class="badge badge-mark border-warning"></span></div>
+                                </li>
+
+                                <li class="media">
+                                    <div class="mr-3">
+                                        <img src="global_assets/images/placeholders/placeholder.jpg" width="36"
+                                            height="36" class="rounded-circle" alt="">
+                                    </div>
+                                    <div class="media-body">
+                                        <a href="#" class="media-title font-weight-semibold">Vanessa Aurelius</a>
+                                        <span class="d-block text-muted font-size-sm">UX expert</span>
+                                    </div>
+                                    <div class="ml-3 align-self-center"><span
+                                            class="badge badge-mark border-secondary"></span></div>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="dropdown-content-footer bg-light">
+                            <a href="#" class="text-body mr-auto">All users</a>
+                            <a href="#" class="text-body"><i class="icon-gear"></i></a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <ul class="navbar-nav flex-row order-1 order-lg-2 flex-1 flex-lg-0 justify-content-end align-items-center">
+            <li class="nav-item nav-item-dropdown-lg dropdown">
+                <a href="#" class="navbar-nav-link navbar-nav-link-toggler" data-toggle="dropdown">
+                    <i class="icon-bubbles4"></i>
+                    <span class="badge badge-warning badge-pill ml-auto ml-lg-0">2</span>
+                </a>
+
+                <div class="dropdown-menu dropdown-menu-right dropdown-content wmin-lg-350">
+                    <div class="dropdown-content-header">
+                        <span class="font-weight-semibold">Messages</span>
+                        <a href="#" class="text-body"><i class="icon-compose"></i></a>
+                    </div>
+
+                    <div class="dropdown-content-body dropdown-scrollable">
+                        <ul class="media-list">
+                            <li class="media">
+                                <div class="mr-3 position-relative">
+                                    <img src="global_assets/images/placeholders/placeholder.jpg" width="36" height="36"
+                                        class="rounded-circle" alt="">
+                                </div>
+
+                                <div class="media-body">
+                                    <div class="media-title">
+                                        <a href="#">
+                                            <span class="font-weight-semibold">James Alexander</span>
+                                            <span class="text-muted float-right font-size-sm">04:58</span>
+                                        </a>
+                                    </div>
+
+                                    <span class="text-muted">who knows, maybe that would be the best thing for
+                                        me...</span>
+                                </div>
+                            </li>
+
+                            <li class="media">
+                                <div class="mr-3 position-relative">
+                                    <img src="global_assets/images/placeholders/placeholder.jpg" width="36" height="36"
+                                        class="rounded-circle" alt="">
+                                </div>
+
+                                <div class="media-body">
+                                    <div class="media-title">
+                                        <a href="#">
+                                            <span class="font-weight-semibold">Margo Baker</span>
+                                            <span class="text-muted float-right font-size-sm">12:16</span>
+                                        </a>
+                                    </div>
+
+                                    <span class="text-muted">That was something he was unable to do because...</span>
+                                </div>
+                            </li>
+
+                            <li class="media">
+                                <div class="mr-3">
+                                    <img src="global_assets/images/placeholders/placeholder.jpg" width="36" height="36"
+                                        class="rounded-circle" alt="">
+                                </div>
+                                <div class="media-body">
+                                    <div class="media-title">
+                                        <a href="#">
+                                            <span class="font-weight-semibold">Jeremy Victorino</span>
+                                            <span class="text-muted float-right font-size-sm">22:48</span>
+                                        </a>
+                                    </div>
+
+                                    <span class="text-muted">But that would be extremely strained and
+                                        suspicious...</span>
+                                </div>
+                            </li>
+
+                            <li class="media">
+                                <div class="mr-3">
+                                    <img src="global_assets/images/placeholders/placeholder.jpg" width="36" height="36"
+                                        class="rounded-circle" alt="">
+                                </div>
+                                <div class="media-body">
+                                    <div class="media-title">
+                                        <a href="#">
+                                            <span class="font-weight-semibold">Beatrix Diaz</span>
+                                            <span class="text-muted float-right font-size-sm">Tue</span>
+                                        </a>
+                                    </div>
+
+                                    <span class="text-muted">What a strenuous career it is that I've chosen...</span>
+                                </div>
+                            </li>
+
+                            <li class="media">
+                                <div class="mr-3">
+                                    <img src="global_assets/images/placeholders/placeholder.jpg" width="36" height="36"
+                                        class="rounded-circle" alt="">
+                                </div>
+                                <div class="media-body">
+                                    <div class="media-title">
+                                        <a href="#">
+                                            <span class="font-weight-semibold">Richard Vango</span>
+                                            <span class="text-muted float-right font-size-sm">Mon</span>
+                                        </a>
+                                    </div>
+
+                                    <span class="text-muted">Other travelling salesmen live a life of luxury...</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="dropdown-content-footer justify-content-center p-0">
+                        <a href="#" class="btn btn-light btn-block border-0 rounded-top-0" data-popup="tooltip"
+                            title="Load more"><i class="icon-menu7"></i></a>
+                    </div>
+                </div>
+            </li>
+
+            <li class="nav-item nav-item-dropdown-lg dropdown dropdown-user h-100">
+                <a href="#"
+                    class="navbar-nav-link navbar-nav-link-toggler dropdown-toggle d-inline-flex align-items-center h-100"
+                    data-toggle="dropdown">
+                    <img src="global_assets/images/placeholders/placeholder.jpg" class="rounded-pill mr-lg-2"
+                        height="34" alt="">
+                    <span class="d-none d-lg-inline-block"><%= username %></span>
+                </a>
+
+                <div class="dropdown-menu dropdown-menu-right">
+                    <a href="#" class="dropdown-item"><i class="icon-user-plus"></i> My profile</a>
+                    <a href="#" class="dropdown-item"><i class="icon-coins"></i> My balance</a>
+                    <a href="#" class="dropdown-item"><i class="icon-comment-discussion"></i> Messages <span
+                            class="badge badge-primary badge-pill ml-auto">58</span></a>
+                    <div class="dropdown-divider"></div>
+                    <a href="#" class="dropdown-item"><i class="icon-cog5"></i> Account settings</a>
+                    <a href="/hrlogout" class="dropdown-item"><i class="icon-switch2"></i> Logout</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <!-- /main navbar -->
+
+
+    <!-- Page content -->
+    <div class="page-content">
+
+        <!-- Main sidebar -->
+        <div class="sidebar sidebar-dark sidebar-main sidebar-expand-lg">
+
+            <!-- Sidebar content -->
+            <div class="sidebar-content">
+
+                <!-- User menu -->
+                <div class="sidebar-section sidebar-user my-1">
+                    <div class="sidebar-section-body">
+                        <div class="media">
+                            <a href="#" class="mr-3">
+                                <img src="global_assets/images/placeholders/placeholder.jpg" class="rounded-circle"
+                                    alt="">
+                            </a>
+
+                            <div class="media-body">
+                                <div class="font-weight-semibold"><%= username %></div>
+                                <div class="font-size-sm line-height-sm opacity-50">
+                                    Senior developer
+                                </div>
+                            </div>
+
+                            <div class="ml-3 align-self-center">
+                                <button type="button"
+                                    class="btn btn-outline-light-100 text-white border-transparent btn-icon rounded-pill btn-sm sidebar-control sidebar-main-resize d-none d-lg-inline-flex">
+                                    <i class="icon-transmission"></i>
+                                </button>
+
+                                <button type="button"
+                                    class="btn btn-outline-light-100 text-white border-transparent btn-icon rounded-pill btn-sm sidebar-mobile-main-toggle d-lg-none">
+                                    <i class="icon-cross2"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /user menu -->
+
+
+                <!-- Main navigation -->
+                <div class="sidebar-section">
+                    <ul class="nav nav-sidebar" data-nav-type="accordion">
+
+                        <!-- Main -->
+                        <li class="nav-item-header">
+                            <div class="text-uppercase font-size-xs line-height-xs">Main</div> <i class="icon-menu"
+                                title="Main"></i>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/hrDashboard" class="nav-link active">
+                                <i class="icon-home4"></i>
+                                <span>
+                                    Dashboard
+                                </span>
+                            </a>
+                        </li>
+                        <li class="nav-item"><a href="/createInterview" class="nav-link"><i class="icon-pencil6"></i>
+                                <span>Create Interview</span></a></li>
+                        <li class="nav-item"><a href="/product" class="nav-link"><i class="icon-pencil6"></i>
+                                <span>Choose Product</span></a></li>
+                        <li class="nav-item"><a href="/scheduledInterview" class="nav-link"><i class="icon-pencil6"></i>
+                                <span>Scheduled Interview</span></a></li>
+                        <li class="nav-item nav-item-submenu">
+                            <a href="#" class="nav-link"><i class="icon-copy"></i> <span>Profile</span></a>
+
+                            <ul class="nav nav-group-sub">
+                                <li class="nav-item"><a href="/companyProfile" class="nav-link"><span>Company's
+                                            Profile</span></a></li>
+                                <li class="nav-item"><a href="/subHrProfiles" class="nav-link"><span>Sub-Hr</span></a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a href="/selectedTopic" class="nav-link"><i class="icon-pencil6"></i>
+                                <span>Purchased Products</span></a></li>
+                        <!-- /main -->
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="content-wrapper">
+
+            <!-- Inner content -->
+            <div class="content-inner">
+                <!-- Content area -->
+                <div class="content d-flex justify-content-center align-items-center">
+
+                    <!-- Login form -->
+
+                    <div class="card mb-12">
+                        <ul class="nav nav-tabs nav-justified bg-light rounded-top mb-12">
+                            <li class="nav-item"><a href="#login-tab1" class="nav-link border-y-0 border-left-0 active"
+                                    data-toggle="tab">
+                                    <h6 class="my-1">Single Interview</h6>
+                                </a></li>
+                            <li class="nav-item"><a href="#login-tab2" class="nav-link border-y-0 border-right-0"
+                                    data-toggle="tab">
+                                    <h6 class="my-1">Batch Interview</h6>
+                                </a></li>
+                        </ul>
+
+                        <div class="tab-content card-body">
+                            <div class="tab-pane fade show active" id="login-tab1">
+                                <form action="/postInterviewData" method="POST" class="wmin-sm-400">
+                                    <div class="form-group row">
+                                        <div class="col-lg-6">
+                                            <label class="col-form-label">Student Name:</label>
+                                            <input name="studentName" type="text" class="form-control" placeholder="">
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <label class="col-form-label">Student College</label>
+                                            <input name="studentCollege" type="text" class="form-control" placeholder="">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <div class="col-lg-6">
+                                            <label class="col-form-label">Student Id:</label>
+                                            <input name="studentId" type="text" class="form-control" placeholder="">
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <label class="col-form-label">Student E-mail:</label>
+                                            <input name="studentEmail" type="text" class="form-control" placeholder="">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <div class="col-lg-6">
+                                            <label class="col-form-label">Student Contact Number:</label>
+                                            <input name="studentContact" type="text" class="form-control" placeholder="">
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <label class="col-form-label">Student's DOB</label>
+                                            <input name="studentDob" type="date" class="form-control" placeholder="">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <div class="col-lg-6">
+                                            <label class="col-form-label">Position:</label>
+                                            <input name="position" type="text" class="form-control" placeholder="">
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <label class="col-form-label">Round Number:</label>
+                                            <input name="roundNumber" type="text" class="form-control" placeholder="">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <div class="col-lg-6">
+                                            <label class="col-form-label">Select Category:</label>
+                                            <select id="categorySelect" name="category" class="form-control form-control-select2">
+                                                <option disabled selected value="fgdgfd">-select-</option>
+                                                <% for(let i=0;i<selected.length;i++){%>
+                                                    <option value="<%=category[selected[i].categoryid-1].id%>"><%=category[selected[i].categoryid-1].category%></option>
+                                                <%}%>
+                                            </select>
+                                        </div>
+
+                                        <div id="dateDiv"class="col-lg-6">
+                                            <!-- <label class="col-form-label">Date</label> -->
+                                            <!-- <input name="date" type="text" class="form-control" placeholder=""> -->
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <label class="col-lg-12 col-form-label">Resume Link:</label>
+                                        <div class="col-lg-8">
+                                            <input name="resumeLink" type="text" class="form-control" placeholder="">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group-row">
+                                        <div class="col-lg-12">
+                                            <div class="form-group row">
+                                                <label class="col-lg-2 col-form-label font-weight-semibold">Upload
+                                                    Resume:</label>
+                                                <div class="col-lg-10">
+                                                    <input type="file" class="file-input" data-fouc>
+                                                    <span class="form-text text-muted">Display preview on load with
+                                                        preset files/images and captions with
+                                                        <code>overwriteInitial</code> set to <code>true</code>.</span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="text-right">
+                                        <button type="submit" class="btn btn-primary">Submit form <i
+                                                class="icon-paperplane ml-2"></i></button>
+                                    </div>
+                                </form>
+                            </div>
+
+                           
+
+                            <div class="tab-pane fade" id="login-tab2">
+                                <form>
+                                    <label for="csv-file">Upload a CSV file:</label>
+                                    <input type="file" id="csv-file" accept=".csv" />
+                                    <br />
+                                    <br />
+                                    <button id="upload-btn" type="button">Upload</button>
+                                    <button id="submit-btn" type="button" style="display: none;">Submit</button>
+                                </form>
+                                
+                                    <div class="card">
+                                        <div id="csv-table-container" class="table-responsive">
+                                           
+                                        </div>
+                                    </div>
+                                
+                                <script src="https://cdn.jsdelivr.net/npm/papaparse@5.3.0/papaparse.min.js"></script>
+                                <script>
+                                     var selected = <%-JSON.stringify(selected)%>;
+                                        var interviewers = <%-JSON.stringify(interviewers)%>;
+                                        var freeslot = <%-JSON.stringify(freeslot)%>;
+                                        console.log(selected);
+                                        console.log(interviewers);
+                                        console.log(freeslot);
+
+                                    const selectedCategory=document.getElementById("categorySelect");
+                                    const dateDiv=document.getElementById("dateDiv");
+
+                                    selectedCategory.addEventListener("input",function (){
+                                       selectedCategoryId=selectedCategory.value;
+                                       console.log(selectedCategoryId);
+                                       dateDiv.innerHTML = "";
+                                       const dropdown = document.createElement("select");
+
+                                       dropdown.innerHTML +=`<option disabled value="fgdgfd">-select-</option>`;
+
+                                       for(let i=0;i<freeslot.length;i++){
+                                        if((freeslot[i].scheduled==0)&&(interviewers[freeslot[i].interviewerId-1].preferredInterviewRole1==selectedCategoryId||interviewers[freeslot[i].interviewerId-1].preferredInterviewRole2==selectedCategoryId||interviewers[freeslot[i].interviewerId-1].preferredInterviewRole3==selectedCategoryId)){
+                                            dropdown.innerHTML +=
+                                                                `<option value="${freeslot[i].interviewerId} ${freeslot[i].date} ${freeslot[i].time}">${freeslot[i].date} ${freeslot[i].time}</option>`;
+                                        }
+                                       }
+                                       const label = document.createElement("label");
+                                                    label.textContent = "Date:";
+
+                                    dropdown.setAttribute("name", "date");
+                                    dateDiv.appendChild(label);
+                                       dateDiv.appendChild(dropdown);
+
+                                    });
+                                </script>
+                                <script>
+                                    const dataArray = []; // Initialize an empty array to store the CSV data
+
+                                    // Get a reference to the Upload button and add a click event listener
+                                    document.querySelector('#upload-btn').addEventListener('click', () => {
+                                        const file = document.querySelector('#csv-file').files[0];
+                                        if (file) {
+                                            // Use PapaParse to parse the CSV file
+                                            Papa.parse(file, {
+                                                header: true,
+                                                complete: function (results) {
+                                                    const data = results.data;
+                                                    data.forEach(row => {
+                                                        dataArray.push(
+                                                            row
+                                                            ); // Add each row of data to the array
+                                                    });
+
+                                                    // Create the HTML table to display the CSV data
+                                                    const table = document.createElement('table');
+                                                    const thead = document.createElement('thead');
+                                                    const tbody = document.createElement('tbody');
+
+                                                    // Create the table header row
+                                                    const headerRow = document.createElement('tr');
+                                                    const headers = Object.keys(data[0]);
+                                                    headers.forEach(header => {
+                                                        const th = document.createElement(
+                                                            'th');
+                                                        th.textContent = header;
+                                                        headerRow.appendChild(th);
+                                                    });
+                                                    thead.appendChild(headerRow);
+
+                                                    // Create the table body rows
+                                                    data.forEach(row => {
+                                                        const tr = document.createElement(
+                                                            'tr');
+                                                        headers.forEach(header => {
+                                                            const td = document
+                                                                .createElement(
+                                                                    'td');
+                                                            td.textContent = row[
+                                                                header];
+                                                            tr.appendChild(td);
+                                                        });
+                                                        tbody.appendChild(tr);
+                                                    });
+
+                                                    table.appendChild(thead);
+                                                    table.appendChild(tbody);
+                                                    table.setAttribute("class","table table-border-solid table-bordered");
+
+                                                    // Add the table to the HTML page
+                                                    const csvTableContainer = document
+                                                        .querySelector('#csv-table-container');
+                                                    csvTableContainer.appendChild(table);
+
+                                                    // Hide the Upload button and show the Submit button
+                                                    document.querySelector('#upload-btn').style
+                                                        .display = 'none';
+                                                    document.querySelector('#submit-btn').style
+                                                        .display = 'block';
+                                                }
+                                            });
+                                        } else {
+                                            alert('Please select a CSV file to upload.');
+                                        }
+                                    });
+
+                                    // Get a reference to the Submit button and add a click event listener
+                                    document.querySelector('#submit-btn').addEventListener('click', () => {
+                                        const xhr = new XMLHttpRequest();
+                                        xhr.open('POST', '/uploadInterviewDetails');
+                                        xhr.setRequestHeader('Content-Type', 'application/json');
+                                        xhr.onreadystatechange = function () {
+                                            if (this.readyState === XMLHttpRequest.DONE && this.status ===
+                                                200) {
+                                                console.log('Data submitted successfully.');
+                                            }
+                                        };
+                                        xhr.send(JSON.stringify(dataArray)); // Send the CSV data
+                                    });
+                                </script>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- /login form -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

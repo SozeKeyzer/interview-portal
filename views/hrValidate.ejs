@@ -1,0 +1,75 @@
+<h3>Validate incoming HR company registration details</h3>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity=
+        "sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" 
+        crossorigin="anonymous">
+    </script>
+
+<% if(data.length>0) {%>
+    
+    <table >
+        
+        <thead>
+            <tr>
+
+                <th>CompanyName</th>
+                <th>CompanyAddress</th>
+                <th>Pincode</th>
+                <th>CompanyCity</th>
+                <th>CompanyState</th>
+                <th>CompanyCountry</th>
+                <th>Email</th>
+                <th>CompanyLogo</th>
+                <th>CompanyGSTNumber</th>
+                <th>CompanyLinkedIn</th>
+                <th>CompanyAdditionalLinks</th>
+                <th>Status</th>
+                <th>Confirm</th>
+
+            </tr>
+        </thead >
+        
+        <% for(var i=0; i<data.length; i++) {%>
+            <tr>
+                <th><%= data[i].companyName %></th>
+                <th><%= data[i].companyAddress %></th>
+                <th><%= data[i].companyPincode %></th>
+                <th><%= data[i].companyCity %></th>
+                <th><%= data[i].companyState %></th>
+                <th><%= data[i].companyCountry %></th>
+                <th><%= data[i].companyEmail %></th>
+                <th><%= data[i].companyLogo %></th>
+                <th><%= data[i].companyGSTNumber %></th>
+                <th><%= data[i].companyLinkedIn %></th>
+                <th><%= data[i].companyAdditionalLinks %></th>
+                <th><%= data[i].verifiedStatus %></th>
+                <th >
+                    <!-- <form action="" method="post"> -->
+                        <button onclick="validation('<%= data[i].id %>')" name="foo" value="check" >Validated</button>
+                    <!-- </form> -->
+                </th>
+            </tr>
+        <% } %>
+    </table>
+
+<%}else{%>
+    <h4>No new data</h4>
+<%}%>
+<a href="/">Back to Home Page</a>
+
+<script>
+    function validation(value)
+    {
+        console.log(value);
+        $.post("/hrValidation",
+            {
+                id: value
+            },
+            function (data, status) {
+                console.log(data);
+                console.log(status);
+            }
+            );
+    }
+</script>

@@ -1,0 +1,30 @@
+<!-- HTML structure -->
+<div id="nameField"></div>
+<div id="ageField"></div>
+<div id="classField"></div>
+
+<!-- Client-side JavaScript code -->
+<script src="/socket.io/socket.io.js"></script>
+<script>
+  const socket = io();
+
+  // Event listener for receiving updated form fields
+  socket.on('formFieldsUpdated', (data) => {
+    updateFormFields(data);
+  });
+
+  // Function to update the form fields
+  function updateFormFields(data) {
+    const nameField = document.getElementById('nameField');
+    const ageField = document.getElementById('ageField');
+    const classField = document.getElementById('classField');
+
+    // Update the form fields with the received data
+    nameField.textContent = data.name;
+    ageField.textContent = data.age;
+    classField.textContent = data.class;
+  }
+
+  // Trigger a request to update the form fields
+  socket.emit('updateFormFields');
+</script>

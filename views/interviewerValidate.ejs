@@ -1,0 +1,82 @@
+<h3>Validate incoming INTERVIEWER registration details</h3>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity=
+        "sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" 
+    crossorigin="anonymous">
+</script>
+
+
+<% if(data.length>0) {%>
+    
+    <table >
+        
+        <thead>
+            <tr>
+
+                <th>name</th>
+                <th>email</th>
+                <th>contactNumber</th>
+                <th>address</th>
+                <th>currentEmployer</th>
+                <th>experience</th>
+                <th>resume</th>
+                <th>linkedInProfile</th>
+                <th>githubProfile</th>
+                <th>otherLinks</th>
+                <th>technologyStack</th>
+                <th>preferredInterviewRole1</th>
+                <th>preferredInterviewRole2</th>
+                <th>preferredInterviewRole3</th>
+                <th>verifiedStatus</th>
+                <th>password</th>
+
+            </tr>
+        </thead >
+        
+        <% for(var i=0; i<data.length; i++) {%>
+            <tr>
+                <th><%= data[i].name%></th>
+                <th><%= data[i].email%></th>
+                <th><%= data[i].contactNumber%></th>
+                <th><%= data[i].address%></th>
+                <th><%= data[i].currentEmployer%></th>
+                <th><%= data[i].experience%></th>
+                <th><%= data[i].resume%></th>
+                <th><%= data[i].linkedInProfile%></th>
+                <th><%= data[i].githubProfile%></th>
+                <th><%= data[i].otherLinks%></th>
+                <th><%= data[i].technologyStack%></th>
+                <th><%= data[i].preferredInterviewRole1%></th>
+                <th><%= data[i].preferredInterviewRole2%></th>
+                <th><%= data[i].preferredInterviewRole3%></th>
+                <th><%= data[i].verifiedStatus%></th>
+                <th><%= data[i].password%></th>
+                <th >
+                    <!-- <form action="" method="post"> -->
+                        <button onclick="validation('<%= data[i].id %>')" name="foo" value="check" >Validated</button>
+                    <!-- </form> -->
+                </th>
+            </tr>
+        <% } %>
+    </table>
+
+<%}else{%>
+    <h4>No new data</h4>
+<%}%>
+<a href="/">Back to Home Page</a>
+
+<script>
+    function validation(value)
+    {
+        console.log(value);
+        $.post("/interviewerValidation",
+            {
+                id: value
+            },
+            function (data, status) {
+                console.log(data);
+                console.log(status);
+            }
+            );
+    }
+</script>

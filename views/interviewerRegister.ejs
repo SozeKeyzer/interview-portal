@@ -1,0 +1,287 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>Limitless - Responsive Web Application Kit by Eugene Kopyov</title>
+
+	<!-- Global stylesheets -->
+	<link href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900" rel="stylesheet" type="text/css">
+	<link href="global_assets/css/icons/icomoon/styles.min.css" rel="stylesheet" type="text/css">
+	<link href="layout_1/LTR/default/full/assets/css/all.min.css" rel="stylesheet" type="text/css">
+	<!-- /global stylesheets -->
+
+	<!-- Core JS files -->
+	<script src="global_assets/js/main/jquery.min.js"></script>
+	<script src="global_assets/js/main/bootstrap.bundle.min.js"></script>
+	<!-- /core JS files -->
+
+	<!-- Theme JS files -->
+	<script src="layout_1/LTR/default/full/assets/js/app.js"></script>
+	<!-- /theme JS files -->
+
+</head>
+
+<body>
+
+	<!-- Page content -->
+	<div class="page-content ">
+
+		<!-- Main content -->
+		<div class="content-wrapper">
+
+			<!-- Inner content -->
+			<div class="content-inner">
+
+				<!-- Content area -->
+				<div class="content d-flex justify-content-center align-items-center">
+
+					<div class="card mb-0">
+						<ul class="nav nav-tabs nav-justified bg-light rounded-top mb-0">
+							<li class="nav-item"><a href="#login-tab1" class="nav-link border-y-0 border-left-0 active" data-toggle="tab"><h6 class="my-1">Sign in</h6></a></li>
+							<li class="nav-item"><a href="#login-tab2" class="nav-link border-y-0 border-right-0" data-toggle="tab"><h6 class="my-1">Register</h6></a></li>
+						</ul>
+						
+						<div class="tab-content card-body">
+							
+							<div class="tab-pane fade show active" id="login-tab1">
+								<!-- Login form -->
+								<form class="login-form col-lg-12 offset-lg-0" action="/interviewerLogin" method="POST">
+									<div class="text-center mb-3">
+										<i class="icon-reading icon-2x text-secondary border-secondary border-3 rounded-pill p-3 mb-3 mt-1"></i>
+										<h5 class="mb-0">Login to your account</h5>
+										<span class="d-block text-muted">Your credentials</span>
+									</div>
+
+									<div class="form-group form-group-feedback form-group-feedback-left">
+										<input required type="email" class="form-control" placeholder="E-mail" name="email">
+										<div class="form-control-feedback">
+											<i class="icon-user text-muted"></i>
+										</div>
+									</div>
+
+									<div class="form-group form-group-feedback form-group-feedback-left">
+										<input type="password" class="form-control" placeholder="Password" name="password">
+										<div class="form-control-feedback">
+											<i class="icon-lock2 text-muted"></i>
+										</div>
+									</div>
+
+									<% if (userNotValidated) { %>
+										<div class="form-group text-center text-warning">
+											<span class="px-2">Please wait till someone validate your profile.</span>
+										</div>
+									  <% } %>
+									<% if (invalidDetails) { %>
+										<div class="form-group text-center text-warning">
+											<span class="px-2">Incorrect credentials try again!</span>
+										</div>
+									  <% } %>
+								
+									  <% if (userNotFound) { %>
+										<div class="form-group text-center text-warning">
+											<span class="px-2">User does not exist please register!</span>
+										</div>
+									  <% } %>
+
+
+									<div class="form-group d-flex align-items-center">
+										<label class="custom-control custom-checkbox">
+											<input type="checkbox" name="remember" class="custom-control-input" checked>
+											<span class="custom-control-label">Remember</span>
+										</label>
+
+										<a href="login_password_recover.html" class="ml-auto">Forgot password?</a>
+									</div>
+
+									<div class="form-group">
+										<button type="submit" class="btn btn-primary btn-block">Sign in</button>
+									</div>
+
+									<div class="form-group text-center text-muted content-divider">
+										<span class="px-2">or sign in with</span>
+									</div>
+
+									<div class="form-group text-center">
+										<button type="button" class="btn btn-outline-indigo btn-icon rounded-pill border-2"><i class="icon-facebook"></i></button>
+										<button type="button" class="btn btn-outline-pink btn-icon rounded-pill border-2 ml-2"><i class="icon-dribbble3"></i></button>
+										<button type="button" class="btn btn-outline-secondary btn-icon rounded-pill border-2 ml-2"><i class="icon-github"></i></button>
+										<button type="button" class="btn btn-outline-info btn-icon rounded-pill border-2 ml-2"><i class="icon-twitter"></i></button>
+									</div>
+
+									<div class="form-group text-center text-muted content-divider">
+										<span class="px-2">Don't have an account?</span>
+									</div>
+									
+									<div class="form-group">
+										<a href="#" class="btn btn-light btn-block">Sign up</a>
+									</div>
+									
+									<span class="form-text text-center text-muted">By continuing, you're confirming that you've read our <a href="#">Terms &amp; Conditions</a> and <a href="#">Cookie Policy</a></span>
+								</form> 
+								<!-- /login form -->
+							</div>
+
+								
+
+
+							<div class="tab-pane fade" id="login-tab2">
+								<form action="/interviewerRegistration" method="POST" class="flex-fill">
+									<div class="row">
+										<div class="col-lg-12 offset-lg-0">
+											<div class="card mb-0">
+												<div class="card-body ">
+													<div class="text-center mb-3">
+														<i class="icon-plus3 icon-2x text-success border-success border-3 rounded-pill p-3 mb-3 mt-1"></i>
+														<h5 class="mb-0">Create account</h5>
+														<span class="d-block text-muted">All fields are required</span>
+													</div>
+			
+													
+													<div class="row">
+														<div class="col-lg-12">
+															<div class="form-group form-group-feedback form-group-feedback-right">
+																<input required type="text" class="form-control name" placeholder="Full Name" name="name" id="name" >
+																
+															</div>
+														</div>
+			
+													</div>
+													
+													<div class="row">
+														
+														<div class="col-lg-6">
+															<div class="form-group form-group-feedback form-group-feedback-right">
+																<input required type="email" class="form-control email" placeholder="E-mail" name="email" id="email" >													
+															</div>
+														</div>
+			
+														<div class="col-lg-6">
+															<div class="form-group form-group-feedback form-group-feedback-right">
+																<input required type="tel" class="form-control contactNumber" placeholder="Contact Number" name="contactNumber" id="contactNumber" pattern="[0-9]{10}">
+															</div>
+														</div>
+			
+													</div>
+													<div class="row">
+														<div class="col-lg-12">
+															<div class="form-group form-group-feedback form-group-feedback-right">
+																<input required type="text" class="form-control address" placeholder="Address" name="address" id="address" >
+															</div>
+														</div>
+													</div>
+			
+													<div class="row">
+														<div class="col-lg-4">
+															<div class="form-group form-group-feedback form-group-feedback-right">
+																<div class="form-group form-group-feedback form-group-feedback-right">
+																	<input required type="text" class="form-control currentEmployer" placeholder="Current Employer" name="currentEmployer" id="currentEmployer" >
+																</div>
+															</div>
+														</div>
+			
+														<div class="col-lg-4">
+															<div class="form-group form-group-feedback form-group-feedback-right">
+																<input required type="number" class="form-control experience" placeholder="Experience (in Months)" name="experience" id="experience" >
+															</div>
+														</div>
+			
+														<div class="col-lg-4">
+															<div class="form-group form-group-feedback form-group-feedback-right">
+																<div class="form-group form-group-feedback form-group-feedback-right">
+																	<input required type="text" class="form-control resume" placeholder="Resume(drive link)" name="resume" id="resume" >
+																</div>
+															</div>
+														</div>
+													</div>
+			
+													<div class="row">
+														<div class="col-lg-4">
+															<div class="form-group form-group-feedback form-group-feedback-right">
+																<div class="form-group form-group-feedback form-group-feedback-right">
+																	<input required type="text" class="form-control linkedInProfile" placeholder="LinkedIn Profile" name="linkedInProfile" id="linkedInProfile" >
+																</div>
+															</div>
+														</div>
+			
+														<div class="col-lg-4">
+															<div class="form-group form-group-feedback form-group-feedback-right">
+																<input required type="text" class="form-control githubProfile" placeholder="Github Profile" name="githubProfile" id="githubProfile" >
+															</div>
+														</div>
+			
+														<div class="col-lg-4">
+															<div class="form-group form-group-feedback form-group-feedback-right">
+																<input required type="text" class="form-control otherLinks" placeholder="Other Links" name="otherLinks" id="otherLinks" >
+															</div>
+														</div>
+														
+													</div>
+			
+													<div class="row">
+														
+			
+			
+														<div class="col-lg-12">
+															<div class="form-group form-group-feedback form-group-feedback-right">
+																<div class="form-group form-group-feedback form-group-feedback-right">
+																	<input required type="text" class="form-control technologyStack" placeholder="Technology Stack" name="technologyStack" id="technologyStack" >
+																</div>
+															</div>
+														</div>
+			
+													</div>
+			
+													
+													<div class="row">
+														<div class="col-lg-4">
+															<div class="form-group form-group-feedback form-group-feedback-right">
+																<input required type="text" class="form-control preferredInterviewRole1" placeholder="Preferred Interview Role 1" name="preferredInterviewRole1" id="preferredInterviewRole1" >
+															</div>
+														</div>
+			
+														<div class="col-lg-4">
+															<div class="form-group form-group-feedback form-group-feedback-right">
+																<div class="form-group form-group-feedback form-group-feedback-right">
+																	<input required type="text" class="form-control preferredInterviewRole2" placeholder="Preferred Interview Role 2" name="preferredInterviewRole2" id="preferredInterviewRole2" >
+																</div>
+															</div>
+														</div>
+			
+														<div class="col-lg-4">
+															<div class="form-group form-group-feedback form-group-feedback-right">
+																<input required type="text" class="form-control preferredInterviewRole3" placeholder="Preferred Interview Role 3" name="preferredInterviewRole3" id="preferredInterviewRole3" >
+															</div>
+														</div>
+													</div>
+			
+													
+												</div>
+			
+												<div class="card-footer bg-transparent text-right">
+													<button type="submit" class="btn btn-teal btn-labeled btn-labeled-right"><b><i class="icon-plus3"></i></b> Create account</button>
+												</div>
+											</div>
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+
+				</div>
+				<!-- /content area -->
+
+			</div>
+			<!-- /inner content -->
+
+		</div>
+		<!-- /main content -->
+
+	</div>
+	<!-- /page content -->
+
+</body>
+</html>

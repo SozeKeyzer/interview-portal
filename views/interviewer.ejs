@@ -1,0 +1,1007 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Entrevue Meet</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Global stylesheets -->
+		<link href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900" rel="stylesheet" type="text/css">
+		<link href="global_assets/css/icons/icomoon/styles.min.css" rel="stylesheet" type="text/css">
+		<link href="layout_1/LTR/default/full/assets/css/all.min.css" rel="stylesheet" type="text/css">
+		<!-- /global stylesheets -->
+
+		<!-- Core JS files -->
+		<script src="global_assets/js/main/jquery.min.js"></script>
+		<script src="global_assets/js/main/bootstrap.bundle.min.js"></script>
+		<!-- /core JS files -->
+
+		<!-- Theme JS files -->
+		<script src="global_assets/js/plugins/visualization/echarts/echarts.min.js"></script>
+		<script src="global_assets/js/plugins/ui/fullcalendar/core/main.min.js"></script>
+		<script src="global_assets/js/plugins/ui/fullcalendar/daygrid/main.min.js"></script>
+		<script src="global_assets/js/plugins/ui/fullcalendar/timegrid/main.min.js"></script>
+		<script src="global_assets/js/plugins/ui/fullcalendar/interaction/main.min.js"></script>
+
+		<script src="layout_1/LTR/default/full/assets/js/app.js"></script>
+		<script src="global_assets/js/demo_pages/user_pages_profile.js"></script>
+		<script src="global_assets/js/demo_charts/echarts/light/bars/tornado_negative_stack.js"></script>
+		<script src="global_assets/js/demo_charts/pages/profile/light/balance_stats.js"></script>
+		<script src="global_assets/js/demo_charts/pages/profile/light/available_hours.js"></script>
+
+        <script src="global_assets/js/plugins/forms/selects/select2.min.js"></script>
+        <script src="global_assets/js/demo_pages/form_layouts.js"></script>
+		<!-- /theme JS files -->
+
+
+    <style>
+        body 
+        {
+            overflow: scroll;
+        }
+        .upper 
+        {
+            width: 100%;
+            display: flex;
+            height: 70vh;
+            
+            /* border: 2px solid red; */
+            /* background-color: chartreuse; */
+        }
+        .realTime 
+        {
+            height: 100%;
+            width: 35%;
+            float: left;
+            border: 5px solid black;
+        }
+        .realTime-header{
+            height: 10%;
+            display: flex;
+        }
+        h2 
+        {
+            margin: auto;
+        }
+        
+        .realTime .card 
+        {
+            height: 90%;
+            overflow-y: scroll;
+            overflow-x: hidden;
+        }
+
+
+        #meet 
+        {
+            width: 65%;
+            
+        }
+        .lower 
+        {
+            width: 100%;
+            display: flex;
+            height: auto;
+            background-color: rgb(237, 237, 237);
+        }
+
+        .lower .card 
+        {
+            margin-top: 0rem;
+            width: 100%;
+        }
+    </style>
+  </head>
+  <body>
+    <h1 style="text-align: center;">Entrevue</h1>
+    <p>Please join the video conference below:<a href="<%=link%>"><%= link %></a></p>
+    
+    
+
+    <div class="upper">
+
+        <div class="realTime">
+            <div class="realTime-header">
+                <h2 style="font-weight: 900;">Real-Time Feedback Form</h2>
+            </div>
+
+            <div class="card">
+                <div class="card-body">
+                    <form action="">
+                        <div class="form-group row">
+                            <label class="col-lg-3 col-form-label">Name : </label>
+                            <div class="col-lg-9">    
+                                <input type="text" class="form-control" readonly id="name" name="name">
+                            </div>
+                        </div>
+                        
+                        
+                        
+                        <div class="form-group row">
+                           
+                            <label class="col-lg-6 col-form-label">Role : </label>
+                            <div class="col-lg-6">    
+                                <input type="text" class="form-control" readonly id="role" name="role">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group row">
+                            <label class="col-lg-6 col-form-label">Interview Date : </label>
+                            <div class="col-lg-6">    
+                                <input type="text" class="form-control" readonly id="date" name="date">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label class="col-lg-6 col-form-label">Interview Time : </label>
+                            <div class="col-lg-6">    
+                                <input type="text" class="form-control" readonly id="time" name="time">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label class="col-lg-6 col-form-label">Coding Language : </label>
+                            <div class="col-lg-6">    
+                                <!-- <input type="text" class="form-control" readonly value="Coding Language"> -->
+                                <select class="form-control codingLanguage" name="codingLanguage" id="codingLanguage" >
+                                    <option value="<%=realTimeFeedbackData.codingLanguage%>" disabled selected><%=realTimeFeedbackData.codingLanguage%></option>
+                                    <option value="C">C</option>
+                                    <option value="C++">C++</option>
+                                    <option value="Java">Java</option>
+                                    <option value="Javascript">Javascript</option>
+                                    <option value="HTML/CSS">HTML/CSS</option>
+                                    <option value="Python">Python</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label class="col-lg-6 col-form-label">Communication : </label>
+                            <div class="col-lg-6">    
+                                <input type="text" class="form-control" id="communication" name="communication" >
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label class="col-lg-6 col-form-label">E-mail : </label>
+                            <div class="col-lg-6">    
+                                <input type="text" class="form-control" readonly id="email" name="email">
+                            </div>
+                        </div>
+                        
+                        <hr>
+                        <div class="form-group row">
+                            <label class="col-lg-3">Thinking Speed : </label>
+                            <div class="col-lg-9" >
+                                <input type="radio" class="col-lg-1" id="thinkingSpeed1" name="thinkingSpeed" value="1" oninput="thinkingSpeedRatingChange(this)">
+                                <label class="col-lg-1" for="thinkingSpeed1">1</label>
+                                <input type="radio" class="col-lg-1" id="thinkingSpeed2" name="thinkingSpeed" value="2" oninput="thinkingSpeedRatingChange(this)">
+                                <label class="col-lg-1" for="thinkingSpeed2">2</label>
+                                <input type="radio" class="col-lg-1" id="thinkingSpeed3" name="thinkingSpeed" value="3" oninput="thinkingSpeedRatingChange(this)">
+                                <label class="col-lg-1" for="thinkingSpeed3">3</label>
+                                <input type="radio" class="col-lg-1" id="thinkingSpeed4" name="thinkingSpeed" value="4" oninput="thinkingSpeedRatingChange(this)">
+                                <label class="col-lg-1" for="thinkingSpeed4">4</label>
+                                <input type="radio" class="col-lg-1" id="thinkingSpeed5" name="thinkingSpeed" value="5" oninput="thinkingSpeedRatingChange(this)">
+                                <label class="col-lg-1" for="thinkingSpeed5">5</label>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group row">
+                            <label class="col-lg-3">Coding Speed : </label>
+                            <div class="col-lg-9" >
+                                <input type="radio" class="col-lg-1" id="codingSpeed1" name="codingSpeed" value="1" oninput="codingSpeedRatingChange(this)">
+                                <label class="col-lg-1" for="codingSpeed1">1</label>
+                                <input type="radio" class="col-lg-1" id="codingSpeed2" name="codingSpeed" value="2" oninput="codingSpeedRatingChange(this)">
+                                <label class="col-lg-1" for="codingSpeed2">2</label>
+                                <input type="radio" class="col-lg-1" id="codingSpeed3" name="codingSpeed" value="3" oninput="codingSpeedRatingChange(this)">
+                                <label class="col-lg-1" for="codingSpeed3">3</label>
+                                <input type="radio" class="col-lg-1" id="codingSpeed4" name="codingSpeed" value="4" oninput="codingSpeedRatingChange(this)">
+                                <label class="col-lg-1" for="codingSpeed4">4</label>
+                                <input type="radio" class="col-lg-1" id="codingSpeed5" name="codingSpeed" value="5" oninput="codingSpeedRatingChange(this)">
+                                <label class="col-lg-1" for="codingSpeed5">5</label>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group row">
+                            <label class="col-lg-3">Code Quality : </label>
+                            <div class="col-lg-9" >
+                                <input type="radio" class="col-lg-1" id="codeQuality1" name="codeQuality" value="1" oninput="codeQualityRatingChange(this)">
+                                <label class="col-lg-1" for="codeQuality1">1</label>
+                                <input type="radio" class="col-lg-1" id="codeQuality2" name="codeQuality" value="2" oninput="codeQualityRatingChange(this)">
+                                <label class="col-lg-1" for="codeQuality2">2</label>
+                                <input type="radio" class="col-lg-1" id="codeQuality3" name="codeQuality" value="3" oninput="codeQualityRatingChange(this)">
+                                <label class="col-lg-1" for="codeQuality3">3</label>
+                                <input type="radio" class="col-lg-1" id="codeQuality4" name="codeQuality" value="4" oninput="codeQualityRatingChange(this)">
+                                <label class="col-lg-1" for="codeQuality4">4</label>
+                                <input type="radio" class="col-lg-1" id="codeQuality5" name="codeQuality" value="5" oninput="codeQualityRatingChange(this)">
+                                <label class="col-lg-1" for="codeQuality5">5</label>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group row">
+                            <label class="col-lg-3">Concentration : </label>
+                            <div class="col-lg-9" >
+                                <input type="radio" class="col-lg-1" id="concentration1" name="concentration" value="1" oninput="concentrationRatingChange(this)">
+                                <label class="col-lg-1" for="concentration1">1</label>
+                                <input type="radio" class="col-lg-1" id="concentration2" name="concentration" value="2" oninput="concentrationRatingChange(this)">
+                                <label class="col-lg-1" for="concentration2">2</label>
+                                <input type="radio" class="col-lg-1" id="concentration3" name="concentration" value="3" oninput="concentrationRatingChange(this)">
+                                <label class="col-lg-1" for="concentration3">3</label>
+                                <input type="radio" class="col-lg-1" id="concentration4" name="concentration" value="4" oninput="concentrationRatingChange(this)">
+                                <label class="col-lg-1" for="concentration4">4</label>
+                                <input type="radio" class="col-lg-1" id="concentration5" name="concentration" value="5" oninput="concentrationRatingChange(this)">
+                                <label class="col-lg-1" for="concentration5">5</label>
+                            </div>
+                        </div>
+                        
+                        <hr>
+                        <div class="form-group product">
+
+                            <div class="form-group row">
+                                <label class="col-lg-3">Operating System : </label>
+                                <div class="col-lg-9" >
+                                    <input type="radio" class="col-lg-1" id="operatingSystem1" name="operatingSystem" value="1" oninput="operatingSystemRatingChange(this)">
+                                    <label class="col-lg-1" for="operatingSystem1">1</label>
+                                    <input type="radio" class="col-lg-1" id="operatingSystem2" name="operatingSystem" value="2" oninput="operatingSystemRatingChange(this)">
+                                    <label class="col-lg-1" for="operatingSystem2">2</label>
+                                    <input type="radio" class="col-lg-1" id="operatingSystem3" name="operatingSystem" value="3" oninput="operatingSystemRatingChange(this)">
+                                    <label class="col-lg-1" for="operatingSystem3">3</label>
+                                    <input type="radio" class="col-lg-1" id="operatingSystem4" name="operatingSystem" value="4" oninput="operatingSystemRatingChange(this)">
+                                    <label class="col-lg-1" for="operatingSystem4">4</label>
+                                    <input type="radio" class="col-lg-1" id="operatingSystem5" name="operatingSystem" value="5" oninput="operatingSystemRatingChange(this)">
+                                    <label class="col-lg-1" for="operatingSystem5">5</label>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group row">
+                                <label class="col-lg-3">Database Management : </label>
+                                <div class="col-lg-9" >
+                                    <input type="radio" class="col-lg-1" id="dbms1" name="dbms" value="1" oninput="dbmsRatingChange(this)">
+                                    <label class="col-lg-1" for="dbms1">1</label>
+                                    <input type="radio" class="col-lg-1" id="dbms2" name="dbms" value="2" oninput="dbmsRatingChange(this)">
+                                    <label class="col-lg-1" for="dbms2">2</label>
+                                    <input type="radio" class="col-lg-1" id="dbms3" name="dbms" value="3" oninput="dbmsRatingChange(this)">
+                                    <label class="col-lg-1" for="dbms3">3</label>
+                                    <input type="radio" class="col-lg-1" id="dbms4" name="dbms" value="4" oninput="dbmsRatingChange(this)">
+                                    <label class="col-lg-1" for="dbms4">4</label>
+                                    <input type="radio" class="col-lg-1" id="dbms5" name="dbms" value="5" oninput="dbmsRatingChange(this)">
+                                    <label class="col-lg-1" for="dbms5">5</label>
+                                </div>
+                            </div>
+                        
+                            <div class="form-group row">
+                                <label class="col-lg-3">Datastructures : </label>
+                                <div class="col-lg-9" >
+                                    <input type="radio" class="col-lg-1" id="dataStructures1" name="dataStructure" value="1" oninput="dataStructuresRatingChange(this)">
+                                    <label class="col-lg-1" for="dataStructures1">1</label>
+                                    <input type="radio" class="col-lg-1" id="dataStructures2" name="dataStructure" value="2" oninput="dataStructuresRatingChange(this)">
+                                    <label class="col-lg-1" for="dataStructures2">2</label>
+                                    <input type="radio" class="col-lg-1" id="dataStructures3" name="dataStructure" value="3" oninput="dataStructuresRatingChange(this)">
+                                    <label class="col-lg-1" for="dataStructures3">3</label>
+                                    <input type="radio" class="col-lg-1" id="dataStructures4" name="dataStructure" value="4" oninput="dataStructuresRatingChange(this)">
+                                    <label class="col-lg-1" for="dataStructures4">4</label>
+                                    <input type="radio" class="col-lg-1" id="dataStructures5" name="dataStructure" value="5" oninput="dataStructuresRatingChange(this)">
+                                    <label class="col-lg-1" for="dataStructures5">5</label>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group row">
+                                <label class="col-lg-3">Algorithms : </label>
+                                <div class="col-lg-9" >
+                                    <input type="radio" class="col-lg-1" id="algorithm1" name="algorithm" value="1" oninput="algorithmRatingChange(this)">
+                                    <label class="col-lg-1" for="algorithm1">1</label>
+                                    <input type="radio" class="col-lg-1" id="algorithm2" name="algorithm" value="2" oninput="algorithmRatingChange(this)">
+                                    <label class="col-lg-1" for="algorithm2">2</label>
+                                    <input type="radio" class="col-lg-1" id="algorithm3" name="algorithm" value="3" oninput="algorithmRatingChange(this)">
+                                    <label class="col-lg-1" for="algorithm3">3</label>
+                                    <input type="radio" class="col-lg-1" id="algorithm4" name="algorithm" value="4" oninput="algorithmRatingChange(this)">
+                                    <label class="col-lg-1" for="algorithm4">4</label>
+                                    <input type="radio" class="col-lg-1" id="algorithm5" name="algorithm" value="5" oninput="algorithmRatingChange(this)">
+                                    <label class="col-lg-1" for="algorithm5">5</label>
+                                </div>
+                            </div>
+
+                        </div>
+                        <hr>
+                        
+                        <div class="form-group row">
+                            <label class="col-lg-3">Apptitude : </label>
+                            <div class="col-lg-9" >
+                                <input type="radio" class="col-lg-1" id="apptitude1" name="apptitude" value="1" oninput="apptitudeRatingChange(this)">
+                                <label class="col-lg-1" for="apptitude1">1</label>
+                                <input type="radio" class="col-lg-1" id="apptitude2" name="apptitude" value="2" oninput="apptitudeRatingChange(this)">
+                                <label class="col-lg-1" for="apptitude2">2</label>
+                                <input type="radio" class="col-lg-1" id="apptitude3" name="apptitude" value="3" oninput="apptitudeRatingChange(this)">
+                                <label class="col-lg-1" for="apptitude3">3</label>
+                                <input type="radio" class="col-lg-1" id="apptitude4" name="apptitude" value="4" oninput="apptitudeRatingChange(this)">
+                                <label class="col-lg-1" for="apptitude4">4</label>
+                                <input type="radio" class="col-lg-1" id="apptitude5" name="apptitude" value="5" oninput="apptitudeRatingChange(this)">
+                                <label class="col-lg-1" for="apptitude5">5</label>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group row">
+                            <label class="col-lg-3">Personality and Behaviour : </label>
+                            <div class="col-lg-9" >
+                                <input type="radio" class="col-lg-1" id="personality1" name="personality" value="1" oninput="personalityRatingChange(this)">
+                                <label class="col-lg-1" for="personality1">1</label>
+                                <input type="radio" class="col-lg-1" id="personality2" name="personality" value="2" oninput="personalityRatingChange(this)">
+                                <label class="col-lg-1" for="personality2">2</label>
+                                <input type="radio" class="col-lg-1" id="personality3" name="personality" value="3" oninput="personalityRatingChange(this)">
+                                <label class="col-lg-1" for="personality3">3</label>
+                                <input type="radio" class="col-lg-1" id="personality4" name="personality" value="4" oninput="personalityRatingChange(this)">
+                                <label class="col-lg-1" for="personality4">4</label>
+                                <input type="radio" class="col-lg-1" id="personality5" name="personality" value="5" oninput="personalityRatingChange(this)">
+                                <label class="col-lg-1" for="personality5">5</label>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group row">
+                            <label class="col-lg-3">Projects / Resume : </label>
+                            <div class="col-lg-9" >
+                                <input type="radio" class="col-lg-1" id="project1" name="project" value="1" oninput="projectRatingChange(this)">
+                                <label class="col-lg-1" for="project1">1</label>
+                                <input type="radio" class="col-lg-1" id="project2" name="project" value="2" oninput="projectRatingChange(this)">
+                                <label class="col-lg-1" for="project2">2</label>
+                                <input type="radio" class="col-lg-1" id="project3" name="project" value="3" oninput="projectRatingChange(this)">
+                                <label class="col-lg-1" for="project3">3</label>
+                                <input type="radio" class="col-lg-1" id="project4" name="project" value="4" oninput="projectRatingChange(this)">
+                                <label class="col-lg-1" for="project4">4</label>
+                                <input type="radio" class="col-lg-1" id="project5" name="project" value="5" oninput="projectRatingChange(this)">
+                                <label class="col-lg-1" for="project5">5</label>
+                            </div>
+                        </div>
+                        
+                        <hr>
+
+                        <div class="form-group row">
+                            <label class="col-lg-3">Overall Analysis:</label>
+                            <div class="col-lg-9">    
+                                <select id="overallAnalysis" class="form-control overallAnalysis" name="overallAnalysis">
+                                <option value="" disabled selected>-Select-</option>
+                                <option value="Srongly Proceed">Srongly Proceed</option>
+                                <option value="Proceed">Proceed</option>
+                                <option value="Reject">Reject</option>
+                                <option value="Strongly Reject">Strongly Reject</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-lg-3">Average rating:</label>
+                            <span class="col-lg-3" id="avgRating"></span></p>
+                        </div>
+
+                        <hr>
+                        
+                        
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div id="meet"></div>
+    </div>
+    
+    
+
+    <div class="lower">
+        <div class="card">
+
+            <div class="card-header header-elements-inline">
+                <!-- <h2 class="card-title">Detailed Feedback Form</h2> -->
+                
+            <h2 class="card-title" style="margin-left: 0;font-weight: 900;">Detailed Feedback Form</h2>
+
+                <div class="header-elements">
+                    <div class="list-icons">
+                        <a href="/detailedFeedbackForm?meetLink=<%=link%>&uniqueId=<%=uniqueId%>" " target="_blank"><button type="button" class="btn btn-light">Fill later</button></a>
+                    </div>
+                </div>
+            </div>
+
+            <br>
+
+            <div class="card-body">
+                <form action="">
+                    
+                    <fieldset>
+                        <legend class="font-weight-bold">
+                            <i class="icon-reading mr-2"></i>
+                            Introduction
+                            <a class="float-right text-body" data-toggle="collapse" data-target="#demo1">
+                                <i class="icon-circle-down2"></i>
+                            </a>
+                        </legend>
+
+                        <div class="collapse show" id="demo1">
+                            <div class="form-group row">
+                                <label class="col-lg-4 col-form-label">Languages: </label>
+                                <div class="col-lg-8">
+                                    <input type="text" class="form-control" id="language" placeholder="" oninput="languageChange(this)">
+                                </div>
+                            </div>
+                            
+                            <div class="form-group row">
+                                <label class="col-lg-4 col-form-label">Prior Experience:</label>
+                                <div class="col-lg-8">
+                                    <input type="number" class="form-control" id="priorExperience" placeholder="(in months)" oninput="priorExperienceChange(this)">
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label class="col-lg-4 col-form-label">Projects:</label>
+                                <div class="col-lg-8">
+                                    <input type="text" class="form-control" id="projects" placeholder="" oninput="detailProjectChange(this)">
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label class="col-lg-4 col-form-label">Tech Stack:</label>
+                                <div class="col-lg-8">
+                                    <input type="text" class="form-control" id="techStack" placeholder="" oninput="techStackChange(this)">
+                                </div>
+                            </div>
+
+                        </div>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend class="font-weight-bold">
+                            <i class="icon-reading mr-2"></i>
+                            Data Structure and Algorithm
+                            <a class="float-right text-body" data-toggle="collapse" data-target="#demo2">
+                                <i class="icon-circle-down2"></i>
+                            </a>
+                        </legend>
+
+                        <div class="collapse show" id="demo2">
+
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <fieldset>
+                                        <legend class="font-weight-semibold">
+                                            <i class="icon-file-text2 mr-2"></i>
+                                            Question 1
+                                        </legend>
+                
+                                        
+                                            <div class="form-group row">
+                                                <label class="col-lg-4 col-form-label">Question</label>
+                                                <div class="col-lg-8">
+                                                    <select class="form-control" id="dsaQuestion1" placeholder="" oninput="dsaQuestion1Change(this)">
+                                                        <option selected disabled>Select an option</option>
+                                                        <% for (var i = 0; i < questionData.length; i++) { %>
+                                                            <% if (questionData[i].categoryId == "1") { %>
+                                                              <option><%= questionData[i].question %></option>
+                                                            <% } %>
+                                                          <% } %>
+                                                    </select>
+                                                </div>
+                                            </div>
+                
+                                            <div class="form-group row">
+                                                <label class="col-lg-4 col-form-label">Answer:</label>
+                                                <div class="col-lg-8">
+                                                    <textarea rows="5" cols="5" class="form-control" id="dsaAnswer1" placeholder="Enter detailed answer here" oninput="dsaAnswer1Change(this)"></textarea>
+                                                </div>
+                                            </div>
+                                        
+                                    </fieldset>
+                                </div>
+
+                                <div class="col-lg-6">
+                                    <fieldset>
+                                        <legend class="font-weight-semibold">
+                                            <i class="icon-file-text2 mr-2"></i>
+                                            Question 2
+                                        </legend>
+                
+                                        
+                                            <div class="form-group row">
+                                                <label class="col-lg-4 col-form-label">Question</label>
+                                                <div class="col-lg-8">
+                                                    <select class="form-control" id="dsaQuestion2" placeholder="" oninput="dsaQuestion2Change(this)">
+                                                        <option selected disabled>Select an option</option>
+                                                        <% for (var i = 0; i < questionData.length; i++) { %>
+                                                            <% if (questionData[i].categoryId == "1") { %>
+                                                              <option><%= questionData[i].question %></option>
+                                                            <% } %>
+                                                          <% } %>
+                                                    </select>
+                                                </div>
+                                            </div>
+                
+                                            <div class="form-group row">
+                                                <label class="col-lg-4 col-form-label">Answer:</label>
+                                                <div class="col-lg-8">
+                                                    <textarea rows="5" cols="5" class="form-control" id="dsaAnswer2" placeholder="Enter detailed answer here" oninput="dsaAnswer2Change(this)"></textarea>
+                                                </div>
+                                            </div>
+                                        
+                                    </fieldset>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                    <fieldset>
+                        <legend class="font-weight-bold">
+                            <i class="icon-reading mr-2"></i>
+                            Operation System
+                            <a class="float-right text-body" data-toggle="collapse" data-target="#demo3">
+                                <i class="icon-circle-down2"></i>
+                            </a>
+                        </legend>
+
+                        <div class="collapse show" id="demo3">
+
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <fieldset>
+                                        <legend class="font-weight-semibold">
+                                            <i class="icon-file-text2 mr-2"></i>
+                                            Question 1
+                                        </legend>
+                
+                                        
+                                            <div class="form-group row">
+                                                <label class="col-lg-4 col-form-label">Question</label>
+                                                <div class="col-lg-8">
+                                                    <select class="form-control" id="osQuestion1" placeholder="" oninput="osQuestion1Change(this)">
+                                                        <option selected disabled>Select an option</option>
+                                                        <% for (var i = 0; i < questionData.length; i++) { %>
+                                                            <% if (questionData[i].topicId == "2") { %>
+                                                              <option><%= questionData[i].question %></option>
+                                                            <% } %>
+                                                          <% } %>
+                                                    </select>
+                                                </div>
+                                            </div>
+                
+                                            <div class="form-group row">
+                                                <label class="col-lg-4 col-form-label">Answer:</label>
+                                                <div class="col-lg-8">
+                                                    <textarea rows="5" cols="5" class="form-control" id="osAnswer1" placeholder="Enter detailed answer here" oninput="osAnswer1Change(this)"></textarea>
+                                                </div>
+                                            </div>
+                                        
+                                    </fieldset>
+                                </div>
+
+                                <div class="col-lg-6">
+                                    <fieldset>
+                                        <legend class="font-weight-semibold">
+                                            <i class="icon-file-text2 mr-2"></i>
+                                            Question 2
+                                        </legend>
+                
+                                        
+                                            <div class="form-group row">
+                                                <label class="col-lg-4 col-form-label">Question</label>
+                                                <div class="col-lg-8">
+                                                    <select class="form-control" id="osQuestion2" oninput="osQuestion2Change(this)">
+                                                        <option selected disabled>Select an option</option>
+                                                        <% for (var i = 0; i < questionData.length; i++) { %>
+                                                            <% if (questionData[i].topicId == "2") { %>
+                                                              <option><%= questionData[i].question %></option>
+                                                            <% } %>
+                                                          <% } %>
+                                                    </select>
+                                                </div>
+                                            </div>
+                
+                                            <div class="form-group row">
+                                                <label class="col-lg-4 col-form-label">Answer:</label>
+                                                <div class="col-lg-8">
+                                                    <textarea rows="5" cols="5" class="form-control" id="osAnswer2" placeholder="Enter detailed answer here" oninput="osAnswer2Change(this)"></textarea>
+                                                </div>
+                                            </div>
+                                        
+                                    </fieldset>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                    <fieldset>
+                        <legend class="font-weight-bold">
+                            <i class="icon-reading mr-2"></i>
+                            DataBase and Management System
+                            <a class="float-right text-body" data-toggle="collapse" data-target="#demo4">
+                                <i class="icon-circle-down2"></i>
+                            </a>
+                        </legend>
+
+                        <div class="collapse show" id="demo4">
+
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <fieldset>
+                                        <legend class="font-weight-semibold">
+                                            <i class="icon-file-text2 mr-2"></i>
+                                            Question 1
+                                        </legend>
+                
+                                        
+                                            <div class="form-group row">
+                                                <label class="col-lg-4 col-form-label">Question</label>
+                                                <div class="col-lg-8">
+                                                    <select class="form-control" id="dbmsQuestion1" placeholder="" oninput="dbmsQuestion1Change(this)">
+                                                        <option selected disabled>Select an option</option>
+                                                        <% for (var i = 0; i < questionData.length; i++) { %>
+                                                            <% if (questionData[i].topicId == "3") { %>
+                                                              <option><%= questionData[i].question %></option>
+                                                            <% } %>
+                                                          <% } %>
+                                                    </select>
+                                                </div>
+                                            </div>
+                
+                                            <div class="form-group row">
+                                                <label class="col-lg-4 col-form-label">Answer:</label>
+                                                <div class="col-lg-8">
+                                                    <textarea rows="5" cols="5" class="form-control" id="dbmsAnswer1" placeholder="Enter detailed answer here" oninput="dbmsAnswer1Change(this)"></textarea>
+                                                </div>
+                                            </div>
+                                        
+                                    </fieldset>
+                                </div>
+
+                                <div class="col-lg-6">
+                                    <fieldset>
+                                        <legend class="font-weight-semibold">
+                                            <i class="icon-file-text2 mr-2"></i>
+                                            Question 2
+                                        </legend>
+                
+                                        
+                                            <div class="form-group row">
+                                                <label class="col-lg-4 col-form-label">Question</label>
+                                                <div class="col-lg-8">
+                                                    <select class="form-control" id="dbmsQuestion2" placeholder="" oninput="dbmsQuestion2Change(this)">
+                                                        <option selected disabled>Select an option</option>
+                                                        <% for (var i = 0; i < questionData.length; i++) { %>
+                                                            <% if (questionData[i].topicId == "3") { %>
+                                                              <option><%= questionData[i].question %></option>
+                                                            <% } %>
+                                                          <% } %>
+                                                    </select>
+                                                </div>
+                                            </div>
+                
+                                            <div class="form-group row">
+                                                <label class="col-lg-4 col-form-label">Answer:</label>
+                                                <div class="col-lg-8">
+                                                    <textarea rows="5" cols="5" class="form-control" id="dbmsAnswer2" placeholder="Enter detailed answer here" oninput="dbmsAnswer2Change(this)"></textarea>
+                                                </div>
+                                            </div>
+                                        
+                                    </fieldset>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+
+
+                </form>
+            </div>
+
+        </div>
+        <!-- <section>
+            <h2>Form Section</h2>
+            <form onsubmit="return false;">
+              <fieldset>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" value=""><br><br>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" value=""><br><br>
+                <label for="message">Message:</label><br>
+                <textarea id="message" name="message"></textarea><br><br>
+                <button type="submit" onclick="saveFormData()">Submit</button>
+              </fieldset>
+            </form>
+            <button onclick="openFormInNewTab()">Open Form in New Tab</button>
+          </section> -->
+    </div>
+
+
+
+    <script src="https://meet.jit.si/external_api.js"></script>
+    <script>
+      const options = {
+        roomName: false,
+        parentNode: document.querySelector('#meet'),
+        userInfo: {
+          displayName: '<%= displayName %>'
+        //   also email
+        }
+      };
+      const api = new JitsiMeetExternalAPI('<%= domain %>', options);
+      api.executeCommand('join', [ '<%= link %>' ]);
+    </script>
+
+<script>
+    // get all radio buttons
+    const radioBtns = document.querySelectorAll('input[type="radio"]');
+  
+    // listen for changes to radio buttons and update average rating
+    radioBtns.forEach(function(btn) {
+      btn.addEventListener('input', function() {
+        let total = 0;
+        let count = 0;
+  
+        // calculate sum of selected ratings
+        radioBtns.forEach(function(btn) {
+          if (btn.checked) {
+            total += parseInt(btn.value);
+            count++;
+          }
+        });
+  
+        // update average rating
+        let avg = total / count;
+        document.getElementById('avgRating').textContent = avg.toFixed(1);
+        performAction(avg);
+      });
+    });
+  </script>
+
+        
+        <script src="/socket.io/socket.io.js"></script>
+        <script>
+            const socket = io();
+            const uniqueId="<%=uniqueId%>";
+            const codingLanguage = document.getElementById('codingLanguage');
+            console.log(codingLanguage)
+            const overallAnalysis = document.getElementById('overallAnalysis');
+            console.log(overallAnalysis)
+            const communicationInput = document.getElementById('communication');
+            console.log(communicationInput)
+            const avgRating = document.getElementById('avgRating');
+            console.log(avgRating)
+
+            
+            function thinkingSpeedRatingChange(selectedRating) {
+                var thinkingSpeed = selectedRating.value
+                console.log(`The user selected rating ${thinkingSpeed}`);
+                socket.emit('thinkingSpeedUpdate', {thinkingSpeed,uniqueId});
+            }
+            function codingSpeedRatingChange(selectedRating) {
+                var codingSpeed = selectedRating.value
+                console.log(`The user codingSpeed rating ${codingSpeed}`);
+                socket.emit('codingSpeedUpdate', {codingSpeed,uniqueId});
+            }
+            function codeQualityRatingChange(selectedRating) {
+                var codeQuality = selectedRating.value
+                console.log(`The user codeQuality rating ${codeQuality}`);
+                socket.emit('codeQualityUpdate', {codeQuality,uniqueId});
+            }
+            function concentrationRatingChange(selectedRating) {
+                var concentration = selectedRating.value
+                console.log(`The user concentration rating ${concentration}`);
+                socket.emit('concentrationUpdate', {concentration,uniqueId});
+            }
+            function operatingSystemRatingChange(selectedRating) {
+                var operatingSystem = selectedRating.value
+                console.log(`The user operatingSystem rating ${operatingSystem}`);
+                socket.emit('operatingSystemUpdate', {operatingSystem,uniqueId});
+            }
+            function dbmsRatingChange(selectedRating) {
+                var dbms = selectedRating.value
+                console.log(`The user dbms rating ${dbms}`);
+                socket.emit('dbmsUpdate', {dbms,uniqueId});
+            }
+            function dataStructuresRatingChange(selectedRating) {
+                var dataStructures = selectedRating.value
+                console.log(`The user dataStructures rating ${dataStructures}`);
+                socket.emit('dataStructuresUpdate', {dataStructures,uniqueId});
+            }
+            function algorithmRatingChange(selectedRating) {
+                var algorithm = selectedRating.value
+                console.log(`The user algorithm rating ${algorithm}`);
+                socket.emit('algorithmUpdate', {algorithm,uniqueId});
+            }
+            function apptitudeRatingChange(selectedRating) {
+                var apptitude = selectedRating.value
+                console.log(`The user apptitude rating ${apptitude}`);
+                socket.emit('apptitudeUpdate', {apptitude,uniqueId});
+            }
+            function personalityRatingChange(selectedRating) {
+                var personality = selectedRating.value
+                console.log(`The user personality rating ${personality}`);
+                socket.emit('personalityUpdate', {personality,uniqueId});
+            }
+            function projectRatingChange(selectedRating) {
+                var project = selectedRating.value
+                console.log(`The user project rating ${project}`);
+                socket.emit('projectUpdate', {project,uniqueId});
+            }
+
+            overallAnalysis.addEventListener('input', () => {
+                console.log("rating")
+                const overallAnalysisInput = overallAnalysis.value;
+                console.log(overallAnalysisInput)
+                const communication = communicationInput.value;
+                console.log(communication)
+                socket.emit('realTimeFeedbackUpdate', { overallAnalysisInput, communication,uniqueId });
+            });
+            
+            communicationInput.addEventListener('input', () => {
+                console.log("comm.")
+                const overallAnalysisInput = overallAnalysis.value;
+                console.log(overallAnalysisInput)
+                const communication = communicationInput.value;
+                console.log(communication)
+                socket.emit('realTimeFeedbackUpdate', { overallAnalysisInput, communication ,uniqueId});
+            });
+            
+            codingLanguage.addEventListener('input', () => {
+                console.log("codinglang.")
+                const codingLanguageInput = codingLanguage.value;
+                console.log(codingLanguageInput)
+                socket.emit('codingLanguageUpdate', { codingLanguageInput, uniqueId});
+            });
+            
+            function performAction(avgRating) {
+                console.log("Average rating changed:", avgRating);
+                socket.emit('realTimeAverageRating', { avgRating,uniqueId });
+            }
+
+            function languageChange(selectedRating) {
+                var language= selectedRating.value
+                console.log(`The user language ${language}`);
+                socket.emit('languageUpdate', {language,uniqueId});
+            }
+            function priorExperienceChange(selectedRating) {
+                var priorExperience= selectedRating.value
+                console.log(`The user priorExperiencerating ${priorExperience}`);
+                socket.emit('priorExperienceUpdate', {priorExperience,uniqueId});
+            }
+            function detailProjectChange(selectedRating) {
+                var project = selectedRating.value
+                console.log(`The user project rating ${project}`);
+                socket.emit('detailProjectUpdate', {project,uniqueId});
+            }
+            function techStackChange(selectedRating) {
+                var techStack = selectedRating.value
+                console.log(`The user techStack rating ${techStack}`);
+                socket.emit('techStackUpdate', {techStack,uniqueId});
+            }
+            function dsaQuestion1Change(selectedRating) {
+                var dsaQuestion1 = selectedRating.value
+                console.log(`The user dsaQuestion1 rating ${dsaQuestion1}`);
+                socket.emit('dsaQuestion1Update', {dsaQuestion1,uniqueId});
+            }
+            function dsaAnswer1Change(selectedRating) {
+                var dsaAnswer1 = selectedRating.value
+                console.log(`The user dsaAnswer1 rating ${dsaAnswer1}`);
+                socket.emit('dsaAnswer1Update', {dsaAnswer1,uniqueId});
+            }
+            function dsaQuestion2Change(selectedRating) {
+                var dsaQuestion2 = selectedRating.value
+                console.log(`The user dsaQuestion2 rating ${dsaQuestion2}`);
+                socket.emit('dsaQuestion2Update', {dsaQuestion2,uniqueId});
+            }
+            function dsaAnswer2Change(selectedRating) {
+                var dsaAnswer2 = selectedRating.value
+                console.log(`The user dsaAnswer2 rating ${dsaAnswer2}`);
+                socket.emit('dsaAnswer2Update', {dsaAnswer2,uniqueId});
+            }
+            function osQuestion1Change(selectedRating) {
+                var osQuestion1 = selectedRating.value
+                console.log(`The user osQuestion1 rating ${osQuestion1}`);
+                socket.emit('osQuestion1Update', {osQuestion1,uniqueId});
+            }
+            function osAnswer1Change(selectedRating) {
+                var osAnswer1 = selectedRating.value
+                console.log(`The user osAnswer1 rating ${osAnswer1}`);
+                socket.emit('osAnswer1Update', {osAnswer1,uniqueId});
+            }
+            function osQuestion2Change(selectedRating) {
+                var osQuestion2 = selectedRating.value
+                console.log(`The user osQuestion2 rating ${osQuestion2}`);
+                socket.emit('osQuestion2Update', {osQuestion2,uniqueId});
+            }
+            function osAnswer2Change(selectedRating) {
+                var osAnswer2 = selectedRating.value
+                console.log(`The user osAnswer2 rating ${osAnswer2}`);
+                socket.emit('osAnswer2Update', {osAnswer2,uniqueId});
+            }
+            function dbmsQuestion1Change(selectedRating) {
+                var dbmsQuestion1 = selectedRating.value
+                console.log(`The user dbmsQuestion1 rating ${dbmsQuestion1}`);
+                socket.emit('dbmsQuestion1Update', {dbmsQuestion1,uniqueId});
+            }
+            function dbmsAnswer1Change(selectedRating) {
+                var dbmsAnswer1 = selectedRating.value
+                console.log(`The user dbmsAnswer1 rating ${dbmsAnswer1}`);
+                socket.emit('dbmsAnswer1Update', {dbmsAnswer1,uniqueId});
+            }
+            function dbmsQuestion2Change(selectedRating) {
+                var dbmsQuestion2 = selectedRating.value
+                console.log(`The user dbmsQuestion2 rating ${dbmsQuestion2}`);
+                socket.emit('dbmsQuestion2Update', {dbmsQuestion2,uniqueId});
+            }
+            function dbmsAnswer2Change(selectedRating) {
+                var dbmsAnswer2 = selectedRating.value
+                console.log(`The user dbmsAnswer2 rating ${dbmsAnswer2}`);
+                socket.emit('dbmsAnswer2Update', {dbmsAnswer2,uniqueId});
+            }
+        </script>
+
+        <script>
+            function getSavedValues() {
+                // Simulating the retrieval of saved values from the database
+                var realTimeFeedbackData = <%-JSON.stringify(realTimeFeedbackData)%>;
+                var detailFeedbackData = <%-JSON.stringify(detailFeedbackData)%>;
+             
+                console.log(realTimeFeedbackData)
+                console.log(detailFeedbackData)
+                const savedValues = {
+                    thinkingSpeed: realTimeFeedbackData.thinkingSpeed,
+                    codingSpeed: realTimeFeedbackData.codingSpeed,
+                    codeQuality: realTimeFeedbackData.codeQuality,
+                    concentration: realTimeFeedbackData.concentration,
+                    operatingSystem: realTimeFeedbackData.os,
+                    dbms: realTimeFeedbackData.dbms,
+                    dataStructure: realTimeFeedbackData.dataStructure,
+                    algorithm: realTimeFeedbackData.algorithm,
+                    apptitude: realTimeFeedbackData.apptitude,
+                    personality: realTimeFeedbackData.personalityAndBehaviour,
+                    project: realTimeFeedbackData.projectAndResume
+                };
+
+                for (const fieldName in savedValues) {
+                    const savedValue = savedValues[fieldName];
+                    const radioBtns = document.getElementsByName(fieldName);
+
+                    // Iterate over the radio buttons with the corresponding name
+                    for (const radioBtn of radioBtns) {
+                    if (radioBtn.value === String(savedValue)) {
+                        // Set the checked attribute for the radio button with the saved value
+                        radioBtn.checked = true;
+                        break;
+                    }
+                    }
+                }
+                if(realTimeFeedbackData.overallAnalysis)
+                {
+                    document.getElementById("overallAnalysis").value=realTimeFeedbackData.overallAnalysis
+                }
+                // if(realTimeFeedbackData.codingLanguage)
+                // {
+                //     console.log("ho bhi ra hai ?")
+                //     console.log(realTimeFeedbackData.codingLanguage)
+                //     document.getElementById("codingLanguage").value=realTimeFeedbackData.codingLanguage
+                // }
+                if(realTimeFeedbackData.averageRating)
+                {
+                    var avg=realTimeFeedbackData.averageRating;
+                    avg=Number(avg).toFixed(1)
+                    document.getElementById("avgRating").textContent=avg
+                }
+
+                document.getElementById("name").value = realTimeFeedbackData.name,
+                document.getElementById("role").value = realTimeFeedbackData.role,
+                document.getElementById("date").value = realTimeFeedbackData.date,
+                document.getElementById("time").value = realTimeFeedbackData.time,
+                document.getElementById("communication").value = realTimeFeedbackData.communication,
+                document.getElementById("email").value = realTimeFeedbackData.email,
+                document.getElementById("language").value = detailFeedbackData.language,
+                document.getElementById("priorExperience").value = detailFeedbackData.priorExperience,
+                document.getElementById("projects").value = detailFeedbackData.projects,
+                document.getElementById("techStack").value = detailFeedbackData.techStack,
+                document.getElementById("dsaQuestion1").value = detailFeedbackData.dsaQuestion1,
+                document.getElementById("dsaAnswer1").value = detailFeedbackData.dsaAnswer1,
+                document.getElementById("dsaQuestion2").value = detailFeedbackData.dsaQuestion2,
+                document.getElementById("dsaAnswer2").value = detailFeedbackData.dsaAnswer2,
+                document.getElementById("osQuestion1").value = detailFeedbackData.osQuestion1,
+                document.getElementById("osAnswer1").value = detailFeedbackData.osAnswer1,
+                document.getElementById("osQuestion2").value = detailFeedbackData.osQuestion2,
+                document.getElementById("osAnswer2").value = detailFeedbackData.osAnswer2,
+                document.getElementById("dbmsQuestion1").value = detailFeedbackData.dbmsQuestion1,
+                document.getElementById("dbmsAnswer1").value = detailFeedbackData.dbmsAnswer1,
+                document.getElementById("dbmsQuestion2").value = detailFeedbackData.dbmsQuestion2,
+                document.getElementById("dbmsAnswer2").value = detailFeedbackData.dbmsAnswer2
+            }
+            getSavedValues();
+        </script>
+  </body>
+</html>
+

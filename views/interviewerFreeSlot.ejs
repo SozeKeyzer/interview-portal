@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<title>Entrevue</title>
+		
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+		<script src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js"></script>
+		<!-- include jQuery UI CSS theme -->
+		<link rel="stylesheet" href="https://code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
+		<!-- include jQuery timepicker CSS -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-timepicker/1.13.18/jquery.timepicker.min.css" />
+		<!-- include jQuery timepicker library -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-timepicker/1.13.18/jquery.timepicker.min.js"></script>
+    
+		<!-- Global stylesheets -->
+		<link href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900" rel="stylesheet" type="text/css">
+		<link href="global_assets/css/icons/icomoon/styles.min.css" rel="stylesheet" type="text/css">
+		<link href="layout_1/LTR/default/full/assets/css/all.min.css" rel="stylesheet" type="text/css">
+		<!-- /global stylesheets -->
+
+		<!-- Core JS files -->
+		<script src="global_assets/js/main/jquery.min.js"></script>
+		<script src="global_assets/js/main/bootstrap.bundle.min.js"></script>
+		<!-- /core JS files -->
+
+		<!-- Theme JS files -->
+		<script src="global_assets/js/plugins/visualization/echarts/echarts.min.js"></script>
+		<script src="global_assets/js/plugins/ui/fullcalendar/core/main.min.js"></script>
+		<script src="global_assets/js/plugins/ui/fullcalendar/daygrid/main.min.js"></script>
+		<script src="global_assets/js/plugins/ui/fullcalendar/timegrid/main.min.js"></script>
+		<script src="global_assets/js/plugins/ui/fullcalendar/interaction/main.min.js"></script>
+
+		<script src="layout_1/LTR/default/full/assets/js/app.js"></script>
+		<script src="global_assets/js/demo_pages/user_pages_profile.js"></script>
+		<script src="global_assets/js/demo_charts/echarts/light/bars/tornado_negative_stack.js"></script>
+		<script src="global_assets/js/demo_charts/pages/profile/light/balance_stats.js"></script>
+		<script src="global_assets/js/demo_charts/pages/profile/light/available_hours.js"></script>
+		<!-- /theme JS files -->
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js"></script>
+    <!-- include jQuery UI CSS theme -->
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
+    <!-- include jQuery timepicker CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-timepicker/1.13.18/jquery.timepicker.min.css" />
+    <!-- include jQuery timepicker library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-timepicker/1.13.18/jquery.timepicker.min.js"></script>
+    
+</head>
+
+<body>
+
+	<!-- Main navbar -->
+	<div class="navbar navbar-expand-lg navbar-dark navbar-static">
+		<div class="d-flex flex-1 d-lg-none">
+			<button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-mobile">
+				<i class="icon-paragraph-justify3"></i>
+			</button>
+			<button type="button" class="navbar-toggler sidebar-mobile-main-toggle">
+				<i class="icon-transmission"></i>
+			</button>
+			<button type="button" class="navbar-toggler sidebar-mobile-component-toggle">
+				<i class="icon-arrow-down8"></i>
+			</button>
+		</div>
+
+		<div class="navbar-brand text-center text-lg-left">
+			<a href="index.html" class="d-inline-block">
+				<img src="global_assets/images/logo_light.png" class="d-none d-sm-block" alt="">
+				<img src="global_assets/images/logo_icon_light.png" class="d-sm-none" alt="">
+			</a>
+		</div>
+
+		<div class="collapse navbar-collapse order-2 order-lg-1" id="navbar-mobile">
+			<ul class="navbar-nav">
+				<li class="nav-item dropdown">
+					<a href="#" class="navbar-nav-link" data-toggle="dropdown">
+						<i class="icon-git-compare"></i>
+						<span class="d-lg-none ml-3">Git updates</span>
+						<span class="badge badge-warning badge-pill ml-auto ml-lg-0">9</span>
+					</a>
+
+					<div class="dropdown-menu dropdown-content wmin-lg-350">
+						<div class="dropdown-content-header">
+							<span class="font-weight-semibold">Git updates</span>
+							<a href="#" class="text-body"><i class="icon-sync"></i></a>
+						</div>
+
+						<div class="dropdown-content-body dropdown-scrollable">
+							<ul class="media-list">
+								<li class="media">
+									<div class="mr-3">
+										<a href="#" class="btn bg-transparent border-primary text-primary rounded-pill border-2 btn-icon"><i class="icon-git-pull-request"></i></a>
+									</div>
+
+									<div class="media-body">
+										Drop the IE <a href="#">specific hacks</a> for temporal inputs
+										<div class="text-muted font-size-sm">4 minutes ago</div>
+									</div>
+								</li>
+
+								<li class="media">
+									<div class="mr-3">
+										<a href="#" class="btn bg-transparent border-warning text-warning rounded-pill border-2 btn-icon"><i class="icon-git-commit"></i></a>
+									</div>
+									
+									<div class="media-body">
+										Add full font overrides for popovers and tooltips
+										<div class="text-muted font-size-sm">36 minutes ago</div>
+									</div>
+								</li>
+
+								<li class="media">
+									<div class="mr-3">
+										<a href="#" class="btn bg-transparent border-info text-info rounded-pill border-2 btn-icon"><i class="icon-git-branch"></i></a>
+									</div>
+									
+									<div class="media-body">
+										<a href="#">Chris Arney</a> created a new <span class="font-weight-semibold">Design</span> branch
+										<div class="text-muted font-size-sm">2 hours ago</div>
+									</div>
+								</li>
+
+								<li class="media">
+									<div class="mr-3">
+										<a href="#" class="btn bg-transparent border-success text-success rounded-pill border-2 btn-icon"><i class="icon-git-merge"></i></a>
+									</div>
+									
+									<div class="media-body">
+										<a href="#">Eugene Kopyov</a> merged <span class="font-weight-semibold">Master</span> and <span class="font-weight-semibold">Dev</span> branches
+										<div class="text-muted font-size-sm">Dec 18, 18:36</div>
+									</div>
+								</li>
+
+								<li class="media">
+									<div class="mr-3">
+										<a href="#" class="btn bg-transparent border-primary text-primary rounded-pill border-2 btn-icon"><i class="icon-git-pull-request"></i></a>
+									</div>
+									
+									<div class="media-body">
+										Have Carousel ignore keyboard events
+										<div class="text-muted font-size-sm">Dec 12, 05:46</div>
+									</div>
+								</li>
+							</ul>
+						</div>
+
+						<div class="dropdown-content-footer bg-light">
+							<a href="#" class="text-body mr-auto">All updates</a>
+							<div>
+								<a href="#" class="text-body" data-popup="tooltip" title="Mark all as read"><i class="icon-radio-unchecked"></i></a>
+								<a href="#" class="text-body ml-2" data-popup="tooltip" title="Bug tracker"><i class="icon-bug2"></i></a>
+							</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+
+			<span class="badge badge-success my-3 my-lg-0 ml-lg-3">Online</span>
+
+			<ul class="navbar-nav ml-lg-auto">
+				<li class="nav-item dropdown">
+					<a href="#" class="navbar-nav-link" data-toggle="dropdown">
+						<i class="icon-people"></i>
+						<span class="d-lg-none ml-3">Messages</span>
+					</a>
+					
+					<div class="dropdown-menu dropdown-menu-right dropdown-content wmin-lg-300">
+						<div class="dropdown-content-header">
+							<span class="font-weight-semibold">Users online</span>
+							<a href="#" class="text-body"><i class="icon-search4 font-size-base"></i></a>
+						</div>
+
+						<div class="dropdown-content-body dropdown-scrollable">
+							<ul class="media-list">
+								<li class="media">
+									<div class="mr-3">
+										<img src="global_assets/images/placeholders/placeholder.jpg" width="36" height="36" class="rounded-circle" alt="">
+									</div>
+									<div class="media-body">
+										<a href="#" class="media-title font-weight-semibold">Jordana Ansley</a>
+										<span class="d-block text-muted font-size-sm">Lead web developer</span>
+									</div>
+									<div class="ml-3 align-self-center"><span class="badge badge-mark border-success"></span></div>
+								</li>
+
+								<li class="media">
+									<div class="mr-3">
+										<img src="global_assets/images/placeholders/placeholder.jpg" width="36" height="36" class="rounded-circle" alt="">
+									</div>
+									<div class="media-body">
+										<a href="#" class="media-title font-weight-semibold">Will Brason</a>
+										<span class="d-block text-muted font-size-sm">Marketing manager</span>
+									</div>
+									<div class="ml-3 align-self-center"><span class="badge badge-mark border-danger"></span></div>
+								</li>
+
+								<li class="media">
+									<div class="mr-3">
+										<img src="global_assets/images/placeholders/placeholder.jpg" width="36" height="36" class="rounded-circle" alt="">
+									</div>
+									<div class="media-body">
+										<a href="#" class="media-title font-weight-semibold">Hanna Walden</a>
+										<span class="d-block text-muted font-size-sm">Project manager</span>
+									</div>
+									<div class="ml-3 align-self-center"><span class="badge badge-mark border-success"></span></div>
+								</li>
+
+								<li class="media">
+									<div class="mr-3">
+										<img src="global_assets/images/placeholders/placeholder.jpg" width="36" height="36" class="rounded-circle" alt="">
+									</div>
+									<div class="media-body">
+										<a href="#" class="media-title font-weight-semibold">Dori Laperriere</a>
+										<span class="d-block text-muted font-size-sm">Business developer</span>
+									</div>
+									<div class="ml-3 align-self-center"><span class="badge badge-mark border-warning"></span></div>
+								</li>
+
+								<li class="media">
+									<div class="mr-3">
+										<img src="global_assets/images/placeholders/placeholder.jpg" width="36" height="36" class="rounded-circle" alt="">
+									</div>
+									<div class="media-body">
+										<a href="#" class="media-title font-weight-semibold">Vanessa Aurelius</a>
+										<span class="d-block text-muted font-size-sm">UX expert</span>
+									</div>
+									<div class="ml-3 align-self-center"><span class="badge badge-mark border-secondary"></span></div>
+								</li>
+							</ul>
+						</div>
+
+						<div class="dropdown-content-footer bg-light">
+							<a href="#" class="text-body mr-auto">All users</a>
+							<a href="#" class="text-body"><i class="icon-gear"></i></a>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+
+		<ul class="navbar-nav flex-row order-1 order-lg-2 flex-1 flex-lg-0 justify-content-end align-items-center">
+			<li class="nav-item nav-item-dropdown-lg dropdown">
+				<a href="#" class="navbar-nav-link navbar-nav-link-toggler" data-toggle="dropdown">
+					<i class="icon-bubbles4"></i>
+					<span class="badge badge-warning badge-pill ml-auto ml-lg-0">2</span>
+				</a>
+				
+				<div class="dropdown-menu dropdown-menu-right dropdown-content wmin-lg-350">
+					<div class="dropdown-content-header">
+						<span class="font-weight-semibold">Messages</span>
+						<a href="#" class="text-body"><i class="icon-compose"></i></a>
+					</div>
+
+					<div class="dropdown-content-body dropdown-scrollable">
+						<ul class="media-list">
+							<li class="media">
+								<div class="mr-3 position-relative">
+									<img src="global_assets/images/placeholders/placeholder.jpg" width="36" height="36" class="rounded-circle" alt="">
+								</div>
+
+								<div class="media-body">
+									<div class="media-title">
+										<a href="#">
+											<span class="font-weight-semibold">James Alexander</span>
+											<span class="text-muted float-right font-size-sm">04:58</span>
+										</a>
+									</div>
+
+									<span class="text-muted">who knows, maybe that would be the best thing for me...</span>
+								</div>
+							</li>
+
+							<li class="media">
+								<div class="mr-3 position-relative">
+									<img src="global_assets/images/placeholders/placeholder.jpg" width="36" height="36" class="rounded-circle" alt="">
+								</div>
+
+								<div class="media-body">
+									<div class="media-title">
+										<a href="#">
+											<span class="font-weight-semibold">Margo Baker</span>
+											<span class="text-muted float-right font-size-sm">12:16</span>
+										</a>
+									</div>
+
+									<span class="text-muted">That was something he was unable to do because...</span>
+								</div>
+							</li>
+
+							<li class="media">
+								<div class="mr-3">
+									<img src="global_assets/images/placeholders/placeholder.jpg" width="36" height="36" class="rounded-circle" alt="">
+								</div>
+								<div class="media-body">
+									<div class="media-title">
+										<a href="#">
+											<span class="font-weight-semibold">Jeremy Victorino</span>
+											<span class="text-muted float-right font-size-sm">22:48</span>
+										</a>
+									</div>
+
+									<span class="text-muted">But that would be extremely strained and suspicious...</span>
+								</div>
+							</li>
+
+							<li class="media">
+								<div class="mr-3">
+									<img src="global_assets/images/placeholders/placeholder.jpg" width="36" height="36" class="rounded-circle" alt="">
+								</div>
+								<div class="media-body">
+									<div class="media-title">
+										<a href="#">
+											<span class="font-weight-semibold">Beatrix Diaz</span>
+											<span class="text-muted float-right font-size-sm">Tue</span>
+										</a>
+									</div>
+
+									<span class="text-muted">What a strenuous career it is that I've chosen...</span>
+								</div>
+							</li>
+
+							<li class="media">
+								<div class="mr-3">
+									<img src="global_assets/images/placeholders/placeholder.jpg" width="36" height="36" class="rounded-circle" alt="">
+								</div>
+								<div class="media-body">
+									<div class="media-title">
+										<a href="#">
+											<span class="font-weight-semibold">Richard Vango</span>
+											<span class="text-muted float-right font-size-sm">Mon</span>
+										</a>
+									</div>
+									
+									<span class="text-muted">Other travelling salesmen live a life of luxury...</span>
+								</div>
+							</li>
+						</ul>
+					</div>
+
+					<div class="dropdown-content-footer justify-content-center p-0">
+						<a href="#" class="btn btn-light btn-block border-0 rounded-top-0" data-popup="tooltip" title="Load more"><i class="icon-menu7"></i></a>
+					</div>
+				</div>
+			</li>
+
+			<li class="nav-item nav-item-dropdown-lg dropdown dropdown-user h-100">
+                <a href="#" class="navbar-nav-link navbar-nav-link-toggler dropdown-toggle d-inline-flex align-items-center h-100" data-toggle="dropdown">
+                    <img src="global_assets/images/placeholders/placeholder.jpg" class="rounded-pill mr-lg-2" height="34" alt="">
+                    <span class="d-none d-lg-inline-block"><%=username%></span> 
+                </a>
+
+                <div class="dropdown-menu dropdown-menu-right">
+                    <a href="/interviewerProfile" class="dropdown-item"><i class="icon-user-plus"></i> My profile</a>
+					<!-- <a href="#settings" class="dropdown-item navbar-nav-link" data-toggle="tab">
+						<i class="icon-cog3 mr-2"></i>
+						Settings
+					</a> -->
+                    <div class="dropdown-divider"></div>
+                    <a href="/logout" class="dropdown-item"><i class="icon-switch2"></i> Logout</a>
+                </div>
+            </li>
+		</ul>
+	</div>
+	<!-- /main navbar -->
+
+
+	<!-- Page content -->
+	<div class="page-content">
+
+		<!-- Main sidebar -->
+		<div class="sidebar sidebar-dark sidebar-main sidebar-expand-lg sidebar-main-resized">
+
+			<!-- Sidebar content -->
+			<div class="sidebar-content">
+
+				<!-- User menu -->
+				<div class="sidebar-section sidebar-user my-1">
+					<div class="sidebar-section-body">
+						<div class="media">
+							<a href="#" class="mr-3">
+								<img src="global_assets/images/placeholders/placeholder.jpg" class="rounded-circle" alt="">
+							</a>
+
+							<div class="media-body">
+                                <div class="font-weight-semibold"><%=username%></div>
+                                <div class="font-size-sm line-height-sm opacity-50">
+                                    Interviewer
+                                </div>
+                            </div>
+
+							<div class="ml-3 align-self-center">
+								<button type="button" class="btn btn-outline-light-100 text-white border-transparent btn-icon rounded-pill btn-sm sidebar-control sidebar-main-resize d-none d-lg-inline-flex">
+									<i class="icon-transmission"></i>
+								</button>
+
+								<button type="button" class="btn btn-outline-light-100 text-white border-transparent btn-icon rounded-pill btn-sm sidebar-mobile-main-toggle d-lg-none">
+									<i class="icon-cross2"></i>
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- /user menu -->
+
+
+				<div class="sidebar-section">
+                    <ul class="nav nav-sidebar" data-nav-type="accordion">
+
+                        <!-- Main -->
+                        <li class="nav-item-header"><div class="text-uppercase font-size-xs line-height-xs">Main</div> <i class="icon-menu" title="Main"></i></li>
+                        <li class="nav-item nav-item-submenu">
+							<a href="/interviewerDashboard" class="nav-link">
+								<i class="icon-home4"></i>
+								<span>
+									Dashboard
+								</span>
+							</a>
+						</li>
+
+                        <li class="nav-item nav-item-submenu nav-item-expanded nav-item-open">
+							<a href="#" class="nav-link active"><i class="icon-copy"></i> <span>Personal Info</span></a>
+
+							<ul class="nav nav-group-sub" data-submenu-title="Layouts">
+								<li class="nav-item"><a href="/interviewerProfile" class="nav-link">Profile</a></li>
+								<li class="nav-item"><a href="/interviewerFreeSlot" class="nav-link active">Free-Slot</a></li>
+							</ul>
+						</li>
+                        
+                        <!-- /main -->
+                    </ul>
+                </div>
+			</div>
+			<!-- /sidebar content -->
+			
+		</div>
+		<!-- /main sidebar -->
+
+
+		<!-- Main content -->
+		<div class="content-wrapper">
+
+			<!-- Inner content -->
+			<div class="content-inner">
+
+				<!-- Page header -->
+				<div class="page-header page-header-light mb-0">
+					<!-- <div class="page-header-content header-elements-lg-inline">
+						<div class="page-title d-flex">
+							<h4><i class="icon-arrow-left52 mr-2"></i> <span class="font-weight-semibold">User Pages</span> - Profile Cover</h4>
+							<a href="#" class="header-elements-toggle text-body d-lg-none"><i class="icon-more"></i></a>
+						</div>
+
+						<div class="header-elements d-none">
+							<div class="d-flex justify-content-center">
+								<a href="#" class="btn btn-link btn-float text-body"><i class="icon-bars-alt text-primary"></i><span>Statistics</span></a>
+								<a href="#" class="btn btn-link btn-float text-body"><i class="icon-calculator text-primary"></i> <span>Invoices</span></a>
+								<a href="#" class="btn btn-link btn-float text-body"><i class="icon-calendar5 text-primary"></i> <span>Schedule</span></a>
+							</div>
+						</div>
+					</div> -->
+
+					<!-- <div class="breadcrumb-line breadcrumb-line-light header-elements-lg-inline">
+						<div class="d-flex">
+							<div class="breadcrumb">
+								<a href="index.html" class="breadcrumb-item"><i class="icon-home2 mr-2"></i> Home</a>
+								<a href="user_pages_profile_cover.html" class="breadcrumb-item">User pages</a>
+								<span class="breadcrumb-item active">Profile cover</span>
+							</div>
+
+							<a href="#" class="header-elements-toggle text-body d-lg-none"><i class="icon-more"></i></a>
+						</div>
+
+						<div class="header-elements d-none">
+							<div class="breadcrumb justify-content-center">
+								<a href="#" class="breadcrumb-elements-item">
+									<i class="icon-comment-discussion mr-2"></i>
+									Support
+								</a>
+
+								<div class="breadcrumb-elements-item dropdown p-0">
+									<a href="#" class="breadcrumb-elements-item dropdown-toggle" data-toggle="dropdown">
+										<i class="icon-gear mr-2"></i>
+										Settings
+									</a>
+
+									<div class="dropdown-menu dropdown-menu-right">
+										<a href="#" class="dropdown-item"><i class="icon-user-lock"></i> Account security</a>
+										<a href="#" class="dropdown-item"><i class="icon-statistics"></i> Analytics</a>
+										<a href="#" class="dropdown-item"><i class="icon-accessibility"></i> Accessibility</a>
+										<div class="dropdown-divider"></div>
+										<a href="#" class="dropdown-item"><i class="icon-gear"></i> All settings</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div> -->
+				</div>
+				<!-- /page header -->
+
+
+				<!-- Cover area -->
+				<!-- <div class="profile-cover">
+					<div class="profile-cover-img" style="background-image: url(global_assets/images/placeholders/cover.jpg)"></div>
+					<div class="media align-items-center text-center text-lg-left flex-column flex-lg-row m-0">
+						<div class="mr-lg-3 mb-2 mb-lg-0">
+							<a href="#" class="profile-thumb">
+								<img src="global_assets/images/placeholders/placeholder.jpg" class="border-white rounded-circle" width="48" height="48" alt="">
+							</a>
+						</div>
+
+						<div class="media-body text-white">
+				    		<h1 class="mb-0"><%=username%></h1>
+				    		<span class="d-block">Interviewer</span>
+						</div>
+
+						<div class="ml-lg-3 mt-2 mt-lg-0">
+							<ul class="list-inline list-inline-condensed mb-0">
+								<li class="list-inline-item"><a href="#" class="btn btn-light border-transparent"><i class="icon-file-picture mr-2"></i> Cover image</a></li>
+								<li class="list-inline-item"><a href="#" class="btn btn-light border-transparent"><i class="icon-file-stats mr-2"></i> Statistics</a></li>
+							</ul>
+						</div>
+					</div>
+				</div> -->
+				<!-- /cover area -->
+
+
+				<!-- Profile navigation -->
+				<div class="navbar navbar-expand-lg navbar-light">
+					<div class="text-center d-lg-none w-100">
+						<button type="button" class="navbar-toggler dropdown-toggle" data-toggle="collapse" data-target="#navbar-second">
+							<i class="icon-menu7 mr-2"></i>
+							Profile navigation
+						</button>
+					</div>
+
+					<div class="navbar-collapse collapse" id="navbar-second">
+						<ul class="nav navbar-nav">
+							<li class="nav-item">
+								<a href="/interviewerDashboard" class="navbar-nav-link">
+									<i class="icon-menu7 mr-2"></i>
+									Dashboard
+								</a>
+							</li>
+							<li class="nav-item">
+								<a href="/interviewerFreeSlot" class="navbar-nav-link active">
+									<i class="icon-calendar3 mr-2"></i>
+									Schedule
+									<span class="badge badge-success badge-pill position-static align-top ml-auto ml-lg-2">32</span>
+								</a>
+							</li>
+							<li class="nav-item">
+								<a href="/interviewerProfile" class="navbar-nav-link">
+									<i class="icon-cog3 mr-2"></i>
+									Profile Settings
+								</a>
+							</li>
+						</ul>
+
+						
+					</div>
+				</div>
+				<!-- /profile navigation -->
+
+
+				<!-- Content area -->
+				<div class="content">
+
+					<!-- Inner container -->
+					<div class="d-flex align-items-stretch align-items-lg-start flex-column flex-lg-row">
+
+						<!-- Left content -->
+						<div class="tab-content w-100 order-2 order-lg-1">
+							
+
+						    <div class="tab-pane fade active show" id="schedule">
+
+					    		<!-- Available hours -->
+								<div class="card">
+									<div class="card-header">
+										<h6 class="card-title">Available hours</h6>
+									</div>
+
+									<div class="card-body">
+										<div class="chart-container">
+											<div class="chart has-fixed-height" id="available_hours"></div>
+										</div>
+									</div>
+								</div>
+								<!-- /available hours -->
+
+
+								<!-- Schedule -->
+								<div class="card">
+									<div class="card-header">
+										<h6 class="card-title">My schedule</h6>
+									</div>
+
+									<div class="card-body">
+										<div class="my-schedule"></div>
+									</div>
+								</div>
+								<!-- /schedule -->
+
+
+								<!-- Free Slots  -->
+								
+								<div class="card">
+									<div class="card-header header-elements-inline">
+										<h5 class="card-title">Free slots</h5>
+										<button type="button" class="btn btn-light" data-toggle="modal" data-target="#modal_form_vertical_single">Add Single Free Slot</button>
+										<button type="button" class="btn btn-light" data-toggle="modal" data-target="#modal_form_vertical_week">Add Whole Week Free Slot</button>
+										<div class="header-elements">
+											<div class="list-icons">
+												<a class="list-icons-item" data-action="collapse"></a>
+												<a class="list-icons-item" data-action="reload"></a>
+												<a class="list-icons-item" data-action="remove"></a>
+											</div>
+										</div>
+									</div>
+			
+									<div class="table-responsive">
+										<% if(data.length>0) {%>
+										<table class="table datatable-basic table-bordered table-striped table-hover">
+											<thead>
+												<tr>
+													<th>Date</th>
+													<th>Time</th>
+												</tr>
+											</thead>
+											<tbody>
+												<% for(var i=0; i<data.length; i++) {%>
+												<tr class="<%= data[i].id%>slot">
+													<td><%= data[i].date%></td>
+													<td><%= data[i].time%></td>
+												</tr>
+												<%}%>
+												
+											</tbody>
+										</table>
+										<%}%>
+									</div>
+			
+								</div>
+								<!-- /basic table -->
+			
+			
+								<!-- Vertical form modal -->
+								<div id="modal_form_vertical_single" class="modal fade" tabindex="-1">
+									<div class="modal-dialog">
+										<div class="modal-content">
+											<div class="modal-header">
+												<h5 class="modal-title">Add Single Free Slot</h5>
+												<button type="button" class="close" data-dismiss="modal">&times;</button>
+											</div>
+				
+											<form action="/interviewerFreeSlot" method="POST">
+												<div class="modal-body">
+													<div class="form-group">
+														<div class="row">
+															<div class="col-sm-6">
+																<h6 class="font-weight-semibold">Select Date</h6>
+																<!-- <input type="date" name="date" id="date datepicker" class="form-control date pickadate" placeholder="Select&hellip;"> -->
+																<!-- <label for="datepicker">Select a date:</label> -->
+																<input required readonly autocomplete="off" type="text" name="date" id="datepicker" class="form-control date pickadate" placeholder="Select&hellip;">
+															</div>
+				
+															<hr>
+	
+															<div class="col-sm-6">
+																<h6 class="font-weight-semibold">Select Time </h6>
+																<div class="input-group">
+																	<span class="input-group-prepend">
+																		<span class="input-group-text"><i class="icon-alarm"></i></span>
+																	</span>
+																	<!-- <input type="text" name="time" id="time" class="form-control pickatime time rounded-right" placeholder="Select&hellip;"> -->
+																	<input required type="text" name="time" id="timepicker" class="timepicker form-control pickatime time rounded-right" placeholder="Select&hellip;">
+																</div>
+															</div>
+				
+														</div>
+													</div>
+													
+												</div>
+				
+												<div class="modal-footer">
+													<button type="button" class="btn btn-link" data-dismiss="modal">Close</button>
+													<button  class="btn bg-primary">Add</button>
+												</div>
+											</form>
+										</div>
+									</div>
+								</div>
+			
+								<div id="modal_form_vertical_week" class="modal fade" tabindex="-1">
+									<div class="modal-dialog">
+										<div class="modal-content">
+											<div class="modal-header">
+												<h5 class="modal-title">Add Whole Week Free Slot</h5>
+												<button type="button" class="close" data-dismiss="modal">&times;</button>
+											</div>
+				
+											<form action="/interviewerFreeWeekSlot" method="POST">
+												<div class="modal-body">
+													
+													<div class="form-group">
+														<div class="row">
+															<div class="col-sm-6">
+																<h6 class="font-weight-semibold">Select a start date:</h6>
+																<input required type="text" id="datepicker1" readonly autocomplete="off" name="date1" class="form-control date1 pickadate" placeholder="Select&hellip;">
+																<br>
+		
+															</div>
+				
+															<hr>
+	
+															<div class="col-sm-6">
+																<h6 class="font-weight-semibold">Select an end date:</h6>
+																<input required type="text" id="datepicker2" readonly autocomplete="off" name="date2" class="form-control date2 pickadate" placeholder="Select&hellip;">
+															</div>
+				
+														</div>
+													</div>
+	
+													<div class="col-sm-6">
+														<h6 class="font-weight-semibold">Select a Time For Entire Range</h6>
+														<div class="input-group">
+															<span class="input-group-prepend">
+																<span class="input-group-text"><i class="icon-alarm"></i></span>
+															</span>
+															<!-- <input type="text" name="time" id="time" class="form-control pickatime time rounded-right" placeholder="Select&hellip;"> -->
+															<input required type="text" name="time" id="timepicker" class="timepicker form-control pickatime time rounded-right" placeholder="Select&hellip;">
+														</div>
+													</div>
+												</div>
+				
+												<div class="modal-footer">
+													<button type="button" class="btn btn-link" data-dismiss="modal">Close</button>
+													<button  class="btn bg-primary">Add</button>
+												</div>
+											</form>
+										</div>
+									</div>
+								</div>
+								<!-- /Free Slot  -->
+							
+							
+							
+
+
+					    	</div>
+
+						    
+						</div>
+						<!-- /left content -->
+
+
+						
+
+					</div>
+					<!-- /inner container -->
+
+				</div>
+				<!-- /content area -->
+
+
+				<!-- Footer -->
+				<div class="navbar navbar-expand-lg navbar-light border-bottom-0 border-top">
+					<div class="text-center d-lg-none w-100">
+						<button type="button" class="navbar-toggler dropdown-toggle" data-toggle="collapse" data-target="#navbar-footer">
+							<i class="icon-unfold mr-2"></i>
+							Footer
+						</button>
+					</div>
+
+					<div class="navbar-collapse collapse" id="navbar-footer">
+						<span class="navbar-text">
+							&copy; 2015 - 2018. <a href="#">Limitless Web App Kit</a> by <a href="https://themeforest.net/user/Kopyov" target="_blank">Eugene Kopyov</a>
+						</span>
+
+						<ul class="navbar-nav ml-lg-auto">
+							<li class="nav-item"><a href="https://kopyov.ticksy.com/" class="navbar-nav-link" target="_blank"><i class="icon-lifebuoy mr-2"></i> Support</a></li>
+							<li class="nav-item"><a href="https://demo.interface.club/limitless/docs/" class="navbar-nav-link" target="_blank"><i class="icon-file-text2 mr-2"></i> Docs</a></li>
+							<li class="nav-item"><a href="https://themeforest.net/item/limitless-responsive-web-application-kit/13080328?ref=kopyov" class="navbar-nav-link font-weight-semibold"><span class="text-pink"><i class="icon-cart2 mr-2"></i> Purchase</span></a></li>
+						</ul>
+					</div>
+				</div>
+				<!-- /footer -->
+
+			</div>
+			<!-- /inner content -->
+
+		</div>
+		<!-- /main content -->
+
+	</div>
+	<!-- /page content -->
+
+</body>
+</html>
+
+
+
+<script>
+    $(function() {
+
+        $( "#datepicker" ).datepicker({
+            minDate: new Date(), // set minimum date to today
+            maxDate: "+2w", // set maximum date to 1 week from today
+            dateFormat: "d MM, yy"
+        })
+
+        $( "#datepicker1" ).datepicker({
+            minDate: new Date(), // set minimum date to today
+            maxDate: "+2w", // set maximum date to 1 week from today
+            dateFormat: "d MM, yy",
+            onSelect: function(selectedDate) {
+            // calculate the date 6 days from the selected date to get the end date of the week
+                var endDate = new Date(selectedDate);
+                endDate.setDate(endDate.getDate() + 6);
+                // set the end date in the datepicker
+                $( "#datepicker2" ).datepicker( "option", "minDate", selectedDate );
+                $( "#datepicker2" ).datepicker( "option", "maxDate", endDate );
+                // set the selected date as the start date in the datepicker
+                $(this).val(selectedDate);
+            }
+        });
+	   
+        // initialize second datepicker with no initial date range set
+        $( "#datepicker2" ).datepicker({
+            minDate: new Date(),
+            maxDate: "+1w",
+            dateFormat: "d MM, yy"
+        });
+
+        $('.timepicker').timepicker({
+
+            interval: 30,
+            minTime: '8:00 am',
+            maxTime: '9:00 pm',
+            // startTime: '8:00 am',
+            timeFormat: 'h:i a',
+            dynamic: true,
+            dropdown: true,
+            scrollbar: true
+        });
+    });
+</script>
